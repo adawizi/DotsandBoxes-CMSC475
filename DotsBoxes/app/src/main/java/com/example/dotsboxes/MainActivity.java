@@ -57,8 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link1.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link1.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -73,8 +75,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link2.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link2.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -89,8 +93,10 @@ public class MainActivity extends AppCompatActivity {
                 clickCounter[0]++;
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link3.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link3.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -107,8 +113,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link4.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link4.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -124,8 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link5.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link5.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -141,8 +151,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link6.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link6.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -158,8 +170,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link7.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link7.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -175,8 +189,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link8.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link8.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -192,8 +208,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link9.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link9.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -208,8 +226,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link10.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link10.setImageResource(R.drawable.ra);
                 }
 
             }
@@ -225,8 +245,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link11.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link11.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -241,8 +263,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link12.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link12.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -257,8 +281,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link13.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link13.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -273,8 +299,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link14.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link14.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -289,8 +317,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link15.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link15.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -305,8 +335,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link16.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link16.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -321,8 +353,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link17.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link17.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -337,8 +371,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link18.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link18.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -353,8 +389,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link19.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link19.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -369,8 +407,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link20.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link20.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -385,8 +425,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link21.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link21.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -401,8 +443,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link22.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link22.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -417,8 +461,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link23.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link23.setImageResource(R.drawable.ra);
                 }
             }
         });
@@ -433,8 +479,11 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
+                    link24.setImageResource(R.drawable.ba);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
+                    link24.setImageResource(R.drawable.ra);
+
                 }
             }
         });
