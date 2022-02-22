@@ -6,6 +6,102 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.797"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.515"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.191"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.611" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.778"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.218"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.447" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.786"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
+
     <ImageView
         android:id="@+id/link24"
         android:layout_width="47dp"
@@ -204,7 +300,7 @@
         android:layout_height="30dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.030"
+        app:layout_constraintHorizontal_bias="0.073"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.526"
@@ -312,7 +408,7 @@
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.633"
+        app:layout_constraintHorizontal_bias="0.656"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.608"
@@ -324,7 +420,7 @@
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.926"
+        app:layout_constraintHorizontal_bias="0.936"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.608"
@@ -408,7 +504,7 @@
         android:layout_height="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.629"
+        app:layout_constraintHorizontal_bias="0.634"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.286"
@@ -483,5 +579,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.213"
         app:srcCompat="@drawable/dot" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="50dp"
+        android:layout_height="52dp"
+        android:textSize="27sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.215"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.285" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

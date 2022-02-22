@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
     ImageView link1;
@@ -31,6 +32,18 @@ public class MainActivity extends AppCompatActivity {
     ImageView link22;
     ImageView link23;
     ImageView link24;
+    TextView textView1;
+    TextView textView2;
+    TextView textView3;
+    TextView textView4;
+    TextView textView5;
+    TextView textView6;
+    TextView textView7;
+    TextView textView8;
+    TextView textView9;
+
+    boolean isFilled = false;
+    boolean isFilled2 = false;
 
 
 
@@ -39,8 +52,11 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        int[] links = new int[23];
+        int[] links = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
+                -1, -1, -1, -1, -1};
         final int[] clickCounter = {0};
+        final int[] oneAway = new int[24];
+
         final boolean[] whoseTurn = {true};
         //The bottom side of square is 7 more than top
         //The left side of square is 3 more than top
@@ -52,8 +68,9 @@ public class MainActivity extends AppCompatActivity {
         link1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[0] = clickCounter[0];
                 clickCounter[0]++;
+                links[0] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -63,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
                     link1.setImageResource(R.drawable.ra);
                 }
 
+                isFilled = checkTop(0, links);
+
+                textView1 = findViewById(R.id.textView1);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView1.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView1.setText("P2");
+                }
+
             }
         });
 
@@ -70,8 +97,9 @@ public class MainActivity extends AppCompatActivity {
         link2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[1] = clickCounter[0];
                 clickCounter[0]++;
+                links[1] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -80,6 +108,16 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link2.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkTop(1, links);
+
+                textView2 = findViewById(R.id.textView2);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView2.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView2.setText("P2");
+                }
+
 
             }
         });
@@ -89,8 +127,9 @@ public class MainActivity extends AppCompatActivity {
         link3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[2] = clickCounter[0];
                 clickCounter[0]++;
+                links[2] = clickCounter[0];
+
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
                     link3.setImageResource(R.drawable.ba);
@@ -98,6 +137,16 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link3.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkTop(2, links);
+
+                textView3 = findViewById(R.id.textView3);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView3.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView3.setText("P2");
+                }
+
 
             }
         });
@@ -108,8 +157,9 @@ public class MainActivity extends AppCompatActivity {
         link4.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[3] = clickCounter[0];
                 clickCounter[0]++;
+                links[3] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -117,6 +167,15 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link4.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(3, links);
+
+                textView1 = findViewById(R.id.textView1);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView1.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView1.setText("P2");
                 }
 
             }
@@ -127,8 +186,9 @@ public class MainActivity extends AppCompatActivity {
         link5.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[4] = clickCounter[0];
                 clickCounter[0]++;
+                links[4] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -137,6 +197,25 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link5.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkLeft(4, links);
+                isFilled2 = checkRight(4, links);
+
+                textView2 = findViewById(R.id.textView2);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView2.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView2.setText("P2");
+                }
+
+                textView1 = findViewById(R.id.textView1);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView1.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView1.setText("P2");
+                }
+
 
             }
         });
@@ -146,8 +225,9 @@ public class MainActivity extends AppCompatActivity {
         link6.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[5] = clickCounter[0];
                 clickCounter[0]++;
+                links[5] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -155,6 +235,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link6.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(5, links);
+                isFilled2 = checkRight(5, links);
+
+                textView3 = findViewById(R.id.textView3);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView3.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView3.setText("P2");
+                }
+
+                textView2 = findViewById(R.id.textView2);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView2.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView2.setText("P2");
                 }
 
             }
@@ -165,8 +263,9 @@ public class MainActivity extends AppCompatActivity {
         link7.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[6] = clickCounter[0];
                 clickCounter[0]++;
+                links[6] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -174,6 +273,15 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link7.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkRight(6, links);
+
+                textView3 = findViewById(R.id.textView3);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView3.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView3.setText("P2");
                 }
 
             }
@@ -184,8 +292,9 @@ public class MainActivity extends AppCompatActivity {
         link8.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[7] = clickCounter[0];
                 clickCounter[0]++;
+                links[7] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -193,6 +302,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link8.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkTop(7, links);
+                isFilled2 = checkBottom(7, links);
+
+                textView4 = findViewById(R.id.textView4);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView4.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView4.setText("P2");
+                }
+
+                textView1 = findViewById(R.id.textView1);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView1.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView1.setText("P2");
                 }
 
             }
@@ -203,8 +330,9 @@ public class MainActivity extends AppCompatActivity {
         link9.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[8] = clickCounter[0];
                 clickCounter[0]++;
+                links[8] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -212,6 +340,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link9.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkTop(8, links);
+                isFilled2 = checkBottom(8, links);
+
+                textView5 = findViewById(R.id.textView5);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView5.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView5.setText("P2");
+                }
+
+                textView2 = findViewById(R.id.textView2);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView2.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView2.setText("P2");
                 }
 
             }
@@ -221,8 +367,9 @@ public class MainActivity extends AppCompatActivity {
         link10.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[9] = clickCounter[0];
                 clickCounter[0]++;
+                links[9] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -230,6 +377,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link10.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkTop(9, links);
+                isFilled2 = checkBottom(9, links);
+
+                textView6 = findViewById(R.id.textView6);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView6.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView6.setText("P2");
+                }
+
+                textView3 = findViewById(R.id.textView3);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView3.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView3.setText("P2");
                 }
 
             }
@@ -240,8 +405,9 @@ public class MainActivity extends AppCompatActivity {
         link11.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[10] = clickCounter[0];
                 clickCounter[0]++;
+                links[10] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -250,6 +416,17 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link11.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkLeft(10, links);
+
+                textView4 = findViewById(R.id.textView4);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView4.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView4.setText("P2");
+                }
+
+
             }
         });
 
@@ -258,8 +435,9 @@ public class MainActivity extends AppCompatActivity {
         link12.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[11] = clickCounter[0];
                 clickCounter[0]++;
+                links[11] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -267,6 +445,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link12.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(11, links);
+                isFilled2 = checkRight(11, links);
+
+                textView5 = findViewById(R.id.textView5);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView5.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView5.setText("P2");
+                }
+
+                textView4 = findViewById(R.id.textView4);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView4.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView4.setText("P2");
                 }
             }
         });
@@ -276,8 +472,9 @@ public class MainActivity extends AppCompatActivity {
         link13.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[12] = clickCounter[0];
                 clickCounter[0]++;
+                links[12] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -285,6 +482,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link13.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(12, links);
+                isFilled2 = checkRight(12, links);
+
+                textView6 = findViewById(R.id.textView6);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView6.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView6.setText("P2");
+                }
+
+                textView5 = findViewById(R.id.textView5);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView5.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView5.setText("P2");
                 }
             }
         });
@@ -294,8 +509,9 @@ public class MainActivity extends AppCompatActivity {
         link14.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[13] = clickCounter[0];
                 clickCounter[0]++;
+                links[13] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -304,6 +520,18 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link14.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkRight(13, links);
+
+                textView6 = findViewById(R.id.textView6);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView6.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView6.setText("P2");
+                }
+
+
+
             }
         });
 
@@ -312,8 +540,9 @@ public class MainActivity extends AppCompatActivity {
         link15.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[14] = clickCounter[0];
                 clickCounter[0]++;
+                links[14] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -321,6 +550,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link15.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkTop(14, links);
+                isFilled2 = checkBottom(14, links);
+
+                textView7 = findViewById(R.id.textView7);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView7.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView7.setText("P2");
+                }
+
+                textView4 = findViewById(R.id.textView4);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView4.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView4.setText("P2");
                 }
             }
         });
@@ -330,8 +577,9 @@ public class MainActivity extends AppCompatActivity {
         link16.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[15] = clickCounter[0];
                 clickCounter[0]++;
+                links[15] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -339,6 +587,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link16.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkTop(15, links);
+                isFilled2 = checkBottom(15, links);
+
+                textView8 = findViewById(R.id.textView8);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView8.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView8.setText("P2");
+                }
+
+                textView5 = findViewById(R.id.textView5);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView5.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView5.setText("P2");
                 }
             }
         });
@@ -348,8 +614,9 @@ public class MainActivity extends AppCompatActivity {
         link17.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[16] = clickCounter[0];
                 clickCounter[0]++;
+                links[16] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -357,6 +624,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link17.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkTop(16, links);
+                isFilled2 = checkBottom(16, links);
+
+                textView9 = findViewById(R.id.textView9);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView9.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView9.setText("P2");
+                }
+
+                textView6 = findViewById(R.id.textView6);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView6.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView6.setText("P2");
                 }
             }
         });
@@ -366,8 +651,9 @@ public class MainActivity extends AppCompatActivity {
         link18.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[17] = clickCounter[0];
                 clickCounter[0]++;
+                links[17] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -375,6 +661,15 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link18.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(17, links);
+
+                textView7 = findViewById(R.id.textView7);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView7.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView7.setText("P2");
                 }
             }
         });
@@ -384,8 +679,9 @@ public class MainActivity extends AppCompatActivity {
         link19.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[18] = clickCounter[0];
                 clickCounter[0]++;
+                links[18] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -393,6 +689,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link19.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(18, links);
+                isFilled2 = checkRight(18, links);
+
+                textView8 = findViewById(R.id.textView8);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView8.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView8.setText("P2");
+                }
+
+                textView7 = findViewById(R.id.textView7);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView7.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView7.setText("P2");
                 }
             }
         });
@@ -402,8 +716,9 @@ public class MainActivity extends AppCompatActivity {
         link20.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[19] = clickCounter[0];
                 clickCounter[0]++;
+                links[19] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -411,6 +726,24 @@ public class MainActivity extends AppCompatActivity {
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
                     link20.setImageResource(R.drawable.ra);
+                }
+                isFilled = checkLeft(19, links);
+                isFilled2 = checkRight(19, links);
+
+                textView9 = findViewById(R.id.textView9);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView9.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView9.setText("P2");
+                }
+
+                textView8 = findViewById(R.id.textView8);
+                if(isFilled2 == true && whoseTurn[0] == true){
+                    textView8.setText("P1");
+
+                } else if (isFilled2 == true && whoseTurn[0] == false){
+                    textView8.setText("P2");
                 }
             }
         });
@@ -420,8 +753,9 @@ public class MainActivity extends AppCompatActivity {
         link21.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[20] = clickCounter[0];
                 clickCounter[0]++;
+                links[20] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -430,6 +764,16 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link21.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkRight(20, links);
+
+                textView9 = findViewById(R.id.textView9);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView9.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView9.setText("P2");
+                }
+
             }
         });
 
@@ -438,8 +782,9 @@ public class MainActivity extends AppCompatActivity {
         link22.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[21] = clickCounter[0];
                 clickCounter[0]++;
+                links[21] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -448,6 +793,16 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link22.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkBottom(21, links);
+
+                textView7 = findViewById(R.id.textView7);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView7.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView7.setText("P2");
+                }
+
             }
         });
 
@@ -456,8 +811,9 @@ public class MainActivity extends AppCompatActivity {
         link23.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[22] = clickCounter[0];
                 clickCounter[0]++;
+                links[22] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -466,6 +822,16 @@ public class MainActivity extends AppCompatActivity {
                     whoseTurn[0] = false;
                     link23.setImageResource(R.drawable.ra);
                 }
+                isFilled = checkBottom(22, links);
+
+                textView8 = findViewById(R.id.textView8);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView8.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView8.setText("P2");
+                }
+
             }
         });
 
@@ -474,8 +840,9 @@ public class MainActivity extends AppCompatActivity {
         link24.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                links[23] = clickCounter[0];
                 clickCounter[0]++;
+                links[23] = clickCounter[0];
+
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
@@ -485,10 +852,52 @@ public class MainActivity extends AppCompatActivity {
                     link24.setImageResource(R.drawable.ra);
 
                 }
+                isFilled = checkBottom(23, links);
+
+                textView9 = findViewById(R.id.textView9);
+                if(isFilled == true && whoseTurn[0] == true){
+                    textView9.setText("P1");
+
+                } else if (isFilled == true && whoseTurn[0] == false){
+                    textView9.setText("P2");
+                }
+
             }
         });
 
 
+    }
+
+    private boolean checkTop(int side, int[] links){
+        boolean isFilled = false;
+        if(links[side + 3] >= 0 && links[side + 4] >= 0 && links[side + 7] >= 0){
+            isFilled = true;
+        }
+        return isFilled;
+    }
+
+    private boolean checkLeft(int side, int[] links){
+        boolean isFilled = false;
+        if(links[side - 3]  >= 0 && links[side + 1] >= 0 && links[side + 4] >= 0){
+            isFilled = true;
+        }
+        return isFilled;
+    }
+
+    private boolean checkRight(int side, int[] links){
+        boolean isFilled = false;
+        if(links[side - 1] >= 0 && links[side - 4] >= 0 && links[side + 3] >= 0){
+            isFilled = true;
+        }
+        return isFilled;
+    }
+
+    private boolean checkBottom(int side, int[] links){
+        boolean isFilled = false;
+        if(links[side - 3]  >= 0 && links[side - 4] >= 0 && links[side - 7] >= 0){
+            isFilled = true;
+        }
+        return isFilled;
     }
 
 }
