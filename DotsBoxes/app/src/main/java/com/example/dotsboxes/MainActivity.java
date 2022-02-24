@@ -74,10 +74,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link1.setImageResource(R.drawable.ba);
+                    link1.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link1.setImageResource(R.drawable.ra);
+                    link1.setImageResource(R.drawable.h_red);
                 }
 
                 isFilled = checkTop(0, links);
@@ -103,10 +103,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link2.setImageResource(R.drawable.ba);
+                    link2.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link2.setImageResource(R.drawable.ra);
+                    link2.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(1, links);
 
@@ -132,10 +132,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link3.setImageResource(R.drawable.ba);
+                    link3.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link3.setImageResource(R.drawable.ra);
+                    link3.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(2, links);
 
@@ -163,10 +163,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link4.setImageResource(R.drawable.ba);
+                    link4.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link4.setImageResource(R.drawable.ra);
+                    link4.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(3, links);
 
@@ -192,10 +192,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link5.setImageResource(R.drawable.ba);
+                    link5.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link5.setImageResource(R.drawable.ra);
+                    link5.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(4, links);
                 isFilled2 = checkRight(4, links);
@@ -231,10 +231,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link6.setImageResource(R.drawable.ba);
+                    link6.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link6.setImageResource(R.drawable.ra);
+                    link6.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(5, links);
                 isFilled2 = checkRight(5, links);
@@ -269,10 +269,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link7.setImageResource(R.drawable.ba);
+                    link7.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link7.setImageResource(R.drawable.ra);
+                    link7.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkRight(6, links);
 
@@ -298,10 +298,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link8.setImageResource(R.drawable.ba);
+                    link8.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link8.setImageResource(R.drawable.ra);
+                    link8.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(7, links);
                 isFilled2 = checkBottom(7, links);
@@ -336,10 +336,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link9.setImageResource(R.drawable.ba);
+                    link9.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link9.setImageResource(R.drawable.ra);
+                    link9.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(8, links);
                 isFilled2 = checkBottom(8, links);
@@ -373,10 +373,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link10.setImageResource(R.drawable.ba);
+                    link10.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link10.setImageResource(R.drawable.ra);
+                    link10.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(9, links);
                 isFilled2 = checkBottom(9, links);
@@ -411,10 +411,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link11.setImageResource(R.drawable.ba);
+                    link11.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link11.setImageResource(R.drawable.ra);
+                    link11.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(10, links);
 
@@ -441,10 +441,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link12.setImageResource(R.drawable.ba);
+                    link12.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link12.setImageResource(R.drawable.ra);
+                    link12.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(11, links);
                 isFilled2 = checkRight(11, links);
@@ -478,10 +478,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link13.setImageResource(R.drawable.ba);
+                    link13.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link13.setImageResource(R.drawable.ra);
+                    link13.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(12, links);
                 isFilled2 = checkRight(12, links);
@@ -515,10 +515,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link14.setImageResource(R.drawable.ba);
+                    link14.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link14.setImageResource(R.drawable.ra);
+                    link14.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkRight(13, links);
 
@@ -546,10 +546,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link15.setImageResource(R.drawable.ba);
+                    link15.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link15.setImageResource(R.drawable.ra);
+                    link15.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(14, links);
                 isFilled2 = checkBottom(14, links);
@@ -583,10 +583,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link16.setImageResource(R.drawable.ba);
+                    link16.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link16.setImageResource(R.drawable.ra);
+                    link16.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(15, links);
                 isFilled2 = checkBottom(15, links);
@@ -620,10 +620,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link17.setImageResource(R.drawable.ba);
+                    link17.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link17.setImageResource(R.drawable.ra);
+                    link17.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkTop(16, links);
                 isFilled2 = checkBottom(16, links);
@@ -657,10 +657,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link18.setImageResource(R.drawable.ba);
+                    link18.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link18.setImageResource(R.drawable.ra);
+                    link18.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(17, links);
 
@@ -685,10 +685,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link19.setImageResource(R.drawable.ba);
+                    link19.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link19.setImageResource(R.drawable.ra);
+                    link19.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(18, links);
                 isFilled2 = checkRight(18, links);
@@ -722,10 +722,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link20.setImageResource(R.drawable.ba);
+                    link20.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link20.setImageResource(R.drawable.ra);
+                    link20.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkLeft(19, links);
                 isFilled2 = checkRight(19, links);
@@ -759,10 +759,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link21.setImageResource(R.drawable.ba);
+                    link21.setImageResource(R.drawable.v_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link21.setImageResource(R.drawable.ra);
+                    link21.setImageResource(R.drawable.v_red);
                 }
                 isFilled = checkRight(20, links);
 
@@ -788,10 +788,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link22.setImageResource(R.drawable.ba);
+                    link22.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link22.setImageResource(R.drawable.ra);
+                    link22.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkBottom(21, links);
 
@@ -817,10 +817,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link23.setImageResource(R.drawable.ba);
+                    link23.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link23.setImageResource(R.drawable.ra);
+                    link23.setImageResource(R.drawable.h_red);
                 }
                 isFilled = checkBottom(22, links);
 
@@ -846,10 +846,10 @@ public class MainActivity extends AppCompatActivity {
 
                 if (clickCounter[0] % 2 == 0){
                     whoseTurn[0] = true;
-                    link24.setImageResource(R.drawable.ba);
+                    link24.setImageResource(R.drawable.h_blue);
                 }else if (clickCounter[0] % 2 == 1){
                     whoseTurn[0] = false;
-                    link24.setImageResource(R.drawable.ra);
+                    link24.setImageResource(R.drawable.h_red);
 
                 }
                 isFilled = checkBottom(23, links);
