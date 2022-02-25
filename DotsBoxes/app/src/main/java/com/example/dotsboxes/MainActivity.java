@@ -7,46 +7,21 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.HashMap;
+
 public class MainActivity extends AppCompatActivity {
-    ImageView link1;
-    ImageView link2;
-    ImageView link3;
-    ImageView link4;
-    ImageView link5;
-    ImageView link6;
-    ImageView link7;
-    ImageView link8;
-    ImageView link9;
-    ImageView link10;
-    ImageView link11;
-    ImageView link12;
-    ImageView link13;
-    ImageView link14;
-    ImageView link15;
-    ImageView link16;
-    ImageView link17;
-    ImageView link18;
-    ImageView link19;
-    ImageView link20;
-    ImageView link21;
-    ImageView link22;
-    ImageView link23;
-    ImageView link24;
-    TextView textView1;
-    TextView textView2;
-    TextView textView3;
-    TextView textView4;
-    TextView textView5;
-    TextView textView6;
-    TextView textView7;
-    TextView textView8;
-    TextView textView9;
 
     boolean isFilled = false;
-    boolean isFilled2 = false;
 
-
-
+    ImageView[] grid = new ImageView[24];
+    TextView[] filled = new TextView[9];
+    ArrayList<Integer> horizontal = new ArrayList<>(Arrays.asList(1, 2, 3, 8, 9, 10, 15, 16, 17, 22, 23, 24));
+    ArrayList<Integer> leftEdges = new ArrayList<>(Arrays.asList(4, 11, 18));
+    ArrayList<Integer> rightEdges = new ArrayList<>(Arrays.asList(7, 14, 21));
+    ArrayList<Integer> topEdges = new ArrayList<>(Arrays.asList(1, 2, 3));
+    ArrayList<Integer> bottomEdges = new ArrayList<>(Arrays.asList(22, 23, 24));
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,818 +30,227 @@ public class MainActivity extends AppCompatActivity {
         int[] links = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                 -1, -1, -1, -1, -1};
         final int[] clickCounter = {0};
-        final int[] oneAway = new int[24];
-
-        final boolean[] whoseTurn = {true};
-        //The bottom side of square is 7 more than top
-        //The left side of square is 3 more than top
-        //The right side of square is 4 more than top
-        //Player 1's turn is indicated by the boolean value of true
-        //Player 2's turn is indicated by the boolean value of false
-
-        link1 = findViewById(R.id.link1);
-        link1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[0] = clickCounter[0];
+        final String[] whoseTurn = {"P1"};
 
 
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link1.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link1.setImageResource(R.drawable.h_red);
-                }
+        for(int i = 0; i < grid.length; i++){
+            int res = getResources().getIdentifier("link"+ (i+1), "id", getPackageName());
+            grid[i] = (ImageView) findViewById(res);
+        }
 
-                isFilled = checkTop(0, links);
+        for(int i = 0; i < filled.length; i++){
+            int res = getResources().getIdentifier("textView"+ (i+1), "id", getPackageName());
+            filled[i] = (TextView) findViewById(res);
+        }
 
-                textView1 = findViewById(R.id.textView1);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView1.setText("P1");
 
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView1.setText("P2");
-                }
+        for(int i = 0; i < grid.length; i++){
+            if (horizontal.contains(i + 1)) {
+                int side = i + 1;
+                int n = i;
+                grid[i].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        clickCounter[0]++;
+                        links[n] = clickCounter[0];
+                        grid[n].setClickable(false);
 
+
+                        if (clickCounter[0] % 2 == 0){
+                            whoseTurn[0] = "P1";
+                            grid[n].setImageResource(R.drawable.h_blue);
+                        }else if (clickCounter[0] % 2 == 1){
+                            whoseTurn[0] = "P2";
+                            grid[n].setImageResource(R.drawable.h_red);
+                        }
+
+                        if(topEdges.contains(side)){
+                            isFilled = checkTop(n, links);
+                            if(isFilled){
+                                switch (side) {
+                                    case 1:
+                                        filled[0].setText(whoseTurn[0]);
+                                        break;
+                                    case 2:
+                                        filled[1].setText(whoseTurn[0]);
+                                        break;
+                                    case 3:
+                                        filled[2].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                        } else if (bottomEdges.contains(side)) {
+                            isFilled = checkBottom(n, links);
+                            if(isFilled) {
+                                switch (side) {
+                                    case 22:
+                                        filled[6].setText(whoseTurn[0]);
+                                        break;
+                                    case 23:
+                                        filled[7].setText(whoseTurn[0]);
+                                        break;
+                                    case 24:
+                                        filled[8].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                        }
+                        else{
+                            isFilled = checkTop(n, links);
+                            if(isFilled){
+                                switch (side) {
+                                    case 8:
+                                        filled[3].setText(whoseTurn[0]);
+                                        break;
+                                    case 9:
+                                        filled[4].setText(whoseTurn[0]);
+                                        break;
+                                    case 10:
+                                        filled[5].setText(whoseTurn[0]);
+                                        break;
+                                    case 15:
+                                        filled[6].setText(whoseTurn[0]);
+                                        break;
+                                    case 16:
+                                        filled[7].setText(whoseTurn[0]);
+                                        break;
+                                    case 17:
+                                        filled[8].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                            isFilled = checkBottom(n, links);
+                            if (isFilled){
+                                switch (side) {
+                                    case 8:
+                                        filled[0].setText(whoseTurn[0]);
+                                        break;
+                                    case 9:
+                                        filled[1].setText(whoseTurn[0]);
+                                        break;
+                                    case 10:
+                                        filled[2].setText(whoseTurn[0]);
+                                        break;
+                                    case 15:
+                                        filled[3].setText(whoseTurn[0]);
+                                        break;
+                                    case 16:
+                                        filled[4].setText(whoseTurn[0]);
+                                        break;
+                                    case 17:
+                                        filled[5].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                });
             }
-        });
-
-        link2 = findViewById(R.id.link2);
-        link2.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[1] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link2.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link2.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(1, links);
-
-                textView2 = findViewById(R.id.textView2);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView2.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView2.setText("P2");
-                }
+            else {
+                int side = i + 1;
+                int n = i;
+                grid[i].setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        clickCounter[0]++;
+                        links[n] = clickCounter[0];
+                        grid[n].setClickable(false);
 
 
+                        if (clickCounter[0] % 2 == 0){
+                            whoseTurn[0] = "P1";
+                            grid[n].setImageResource(R.drawable.v_blue);
+                        }else if (clickCounter[0] % 2 == 1){
+                            whoseTurn[0] = "P2";
+                            grid[n].setImageResource(R.drawable.v_red);
+                        }
+
+                        if(leftEdges.contains(side)){
+                            isFilled = checkLeft(n, links);
+                            if(isFilled){
+                                switch (side) {
+                                    case 4:
+                                        filled[0].setText(whoseTurn[0]);
+                                        break;
+                                    case 11:
+                                        filled[3].setText(whoseTurn[0]);
+                                        break;
+                                    case 18:
+                                        filled[6].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                        } else if (rightEdges.contains(side)) {
+                            isFilled = checkRight(n, links);
+                            if(isFilled) {
+                                switch (side) {
+                                    case 7:
+                                        filled[2].setText(whoseTurn[0]);
+                                        break;
+                                    case 14:
+                                        filled[5].setText(whoseTurn[0]);
+                                        break;
+                                    case 21:
+                                        filled[8].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                        }
+                        else {
+                            isFilled = checkLeft(n, links);
+                            if (isFilled) {
+                                switch (side) {
+                                    case 5:
+                                        filled[1].setText(whoseTurn[0]);
+                                        break;
+                                    case 6:
+                                        filled[2].setText(whoseTurn[0]);
+                                        break;
+                                    case 12:
+                                        filled[4].setText(whoseTurn[0]);
+                                        break;
+                                    case 13:
+                                        filled[5].setText(whoseTurn[0]);
+                                        break;
+                                    case 19:
+                                        filled[7].setText(whoseTurn[0]);
+                                        break;
+                                    case 20:
+                                        filled[8].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                            isFilled = checkRight(n, links);
+                            if (isFilled) {
+                                switch (side) {
+                                    case 5:
+                                        filled[0].setText(whoseTurn[0]);
+                                        break;
+                                    case 6:
+                                        filled[1].setText(whoseTurn[0]);
+                                        break;
+                                    case 12:
+                                        filled[3].setText(whoseTurn[0]);
+                                        break;
+                                    case 13:
+                                        filled[4].setText(whoseTurn[0]);
+                                        break;
+                                    case 19:
+                                        filled[6].setText(whoseTurn[0]);
+                                        break;
+                                    case 20:
+                                        filled[7].setText(whoseTurn[0]);
+                                        break;
+                                }
+                            }
+                        }
+                    }
+                });
             }
-        });
 
-
-        link3 = findViewById(R.id.link3);
-        link3.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[2] = clickCounter[0];
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link3.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link3.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(2, links);
-
-                textView3 = findViewById(R.id.textView3);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView3.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView3.setText("P2");
-                }
-
-
-            }
-        });
-
-
-
-        link4 = findViewById(R.id.link4);
-        link4.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[3] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link4.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link4.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(3, links);
-
-                textView1 = findViewById(R.id.textView1);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView1.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView1.setText("P2");
-                }
-
-            }
-        });
-
-
-        link5 = findViewById(R.id.link5);
-        link5.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[4] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link5.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link5.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(4, links);
-                isFilled2 = checkRight(4, links);
-
-                textView2 = findViewById(R.id.textView2);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView2.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView2.setText("P2");
-                }
-
-                textView1 = findViewById(R.id.textView1);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView1.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView1.setText("P2");
-                }
-
-
-            }
-        });
-
-
-        link6 = findViewById(R.id.link6);
-        link6.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[5] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link6.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link6.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(5, links);
-                isFilled2 = checkRight(5, links);
-
-                textView3 = findViewById(R.id.textView3);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView3.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView3.setText("P2");
-                }
-
-                textView2 = findViewById(R.id.textView2);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView2.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView2.setText("P2");
-                }
-
-            }
-        });
-
-
-        link7 = findViewById(R.id.link7);
-        link7.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[6] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link7.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link7.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkRight(6, links);
-
-                textView3 = findViewById(R.id.textView3);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView3.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView3.setText("P2");
-                }
-
-            }
-        });
-
-
-        link8 = findViewById(R.id.link8);
-        link8.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[7] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link8.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link8.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(7, links);
-                isFilled2 = checkBottom(7, links);
-
-                textView4 = findViewById(R.id.textView4);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView4.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView4.setText("P2");
-                }
-
-                textView1 = findViewById(R.id.textView1);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView1.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView1.setText("P2");
-                }
-
-            }
-        });
-
-
-        link9 = findViewById(R.id.link9);
-        link9.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[8] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link9.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link9.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(8, links);
-                isFilled2 = checkBottom(8, links);
-
-                textView5 = findViewById(R.id.textView5);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView5.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView5.setText("P2");
-                }
-
-                textView2 = findViewById(R.id.textView2);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView2.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView2.setText("P2");
-                }
-
-            }
-        });
-
-        link10 = findViewById(R.id.link10);
-        link10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[9] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link10.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link10.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(9, links);
-                isFilled2 = checkBottom(9, links);
-
-                textView6 = findViewById(R.id.textView6);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView6.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView6.setText("P2");
-                }
-
-                textView3 = findViewById(R.id.textView3);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView3.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView3.setText("P2");
-                }
-
-            }
-        });
-
-
-        link11 = findViewById(R.id.link11);
-        link11.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[10] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link11.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link11.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(10, links);
-
-                textView4 = findViewById(R.id.textView4);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView4.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView4.setText("P2");
-                }
-
-
-            }
-        });
-
-
-        link12 = findViewById(R.id.link12);
-        link12.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[11] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link12.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link12.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(11, links);
-                isFilled2 = checkRight(11, links);
-
-                textView5 = findViewById(R.id.textView5);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView5.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView5.setText("P2");
-                }
-
-                textView4 = findViewById(R.id.textView4);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView4.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView4.setText("P2");
-                }
-            }
-        });
-
-
-        link13 = findViewById(R.id.link13);
-        link13.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[12] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link13.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link13.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(12, links);
-                isFilled2 = checkRight(12, links);
-
-                textView6 = findViewById(R.id.textView6);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView6.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView6.setText("P2");
-                }
-
-                textView5 = findViewById(R.id.textView5);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView5.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView5.setText("P2");
-                }
-            }
-        });
-
-
-        link14 = findViewById(R.id.link14);
-        link14.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[13] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link14.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link14.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkRight(13, links);
-
-                textView6 = findViewById(R.id.textView6);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView6.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView6.setText("P2");
-                }
-
-
-
-            }
-        });
-
-
-        link15 = findViewById(R.id.link15);
-        link15.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[14] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link15.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link15.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(14, links);
-                isFilled2 = checkBottom(14, links);
-
-                textView7 = findViewById(R.id.textView7);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView7.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView7.setText("P2");
-                }
-
-                textView4 = findViewById(R.id.textView4);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView4.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView4.setText("P2");
-                }
-            }
-        });
-
-
-        link16 = findViewById(R.id.link16);
-        link16.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[15] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link16.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link16.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(15, links);
-                isFilled2 = checkBottom(15, links);
-
-                textView8 = findViewById(R.id.textView8);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView8.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView8.setText("P2");
-                }
-
-                textView5 = findViewById(R.id.textView5);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView5.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView5.setText("P2");
-                }
-            }
-        });
-
-
-        link17 = findViewById(R.id.link17);
-        link17.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[16] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link17.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link17.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkTop(16, links);
-                isFilled2 = checkBottom(16, links);
-
-                textView9 = findViewById(R.id.textView9);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView9.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView9.setText("P2");
-                }
-
-                textView6 = findViewById(R.id.textView6);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView6.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView6.setText("P2");
-                }
-            }
-        });
-
-
-        link18 = findViewById(R.id.link18);
-        link18.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[17] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link18.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link18.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(17, links);
-
-                textView7 = findViewById(R.id.textView7);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView7.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView7.setText("P2");
-                }
-            }
-        });
-
-
-        link19 = findViewById(R.id.link19);
-        link19.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[18] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link19.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link19.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(18, links);
-                isFilled2 = checkRight(18, links);
-
-                textView8 = findViewById(R.id.textView8);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView8.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView8.setText("P2");
-                }
-
-                textView7 = findViewById(R.id.textView7);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView7.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView7.setText("P2");
-                }
-            }
-        });
-
-
-        link20 = findViewById(R.id.link20);
-        link20.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[19] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link20.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link20.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkLeft(19, links);
-                isFilled2 = checkRight(19, links);
-
-                textView9 = findViewById(R.id.textView9);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView9.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView9.setText("P2");
-                }
-
-                textView8 = findViewById(R.id.textView8);
-                if(isFilled2 == true && whoseTurn[0] == true){
-                    textView8.setText("P1");
-
-                } else if (isFilled2 == true && whoseTurn[0] == false){
-                    textView8.setText("P2");
-                }
-            }
-        });
-
-
-        link21 = findViewById(R.id.link21);
-        link21.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[20] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link21.setImageResource(R.drawable.v_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link21.setImageResource(R.drawable.v_red);
-                }
-                isFilled = checkRight(20, links);
-
-                textView9 = findViewById(R.id.textView9);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView9.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView9.setText("P2");
-                }
-
-            }
-        });
-
-
-        link22 = findViewById(R.id.link22);
-        link22.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[21] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link22.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link22.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkBottom(21, links);
-
-                textView7 = findViewById(R.id.textView7);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView7.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView7.setText("P2");
-                }
-
-            }
-        });
-
-
-        link23 = findViewById(R.id.link23);
-        link23.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[22] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link23.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link23.setImageResource(R.drawable.h_red);
-                }
-                isFilled = checkBottom(22, links);
-
-                textView8 = findViewById(R.id.textView8);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView8.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView8.setText("P2");
-                }
-
-            }
-        });
-
-
-        link24 = findViewById(R.id.link24);
-        link24.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                clickCounter[0]++;
-                links[23] = clickCounter[0];
-
-
-                if (clickCounter[0] % 2 == 0){
-                    whoseTurn[0] = true;
-                    link24.setImageResource(R.drawable.h_blue);
-                }else if (clickCounter[0] % 2 == 1){
-                    whoseTurn[0] = false;
-                    link24.setImageResource(R.drawable.h_red);
-
-                }
-                isFilled = checkBottom(23, links);
-
-                textView9 = findViewById(R.id.textView9);
-                if(isFilled == true && whoseTurn[0] == true){
-                    textView9.setText("P1");
-
-                } else if (isFilled == true && whoseTurn[0] == false){
-                    textView9.setText("P2");
-                }
-
-            }
-        });
-
-
+        }
     }
+
 
     private boolean checkTop(int side, int[] links){
         boolean isFilled = false;
