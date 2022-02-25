@@ -29,8 +29,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         int[] links = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
                 -1, -1, -1, -1, -1};
-        final int[] clickCounter = {0};
-        final String[] whoseTurn = {"P1"};
+        final int[] clickCounter = {-1};
+        final String[] whoClicked = {"P1"};
 
 
         for(int i = 0; i < grid.length; i++){
@@ -57,10 +57,10 @@ public class MainActivity extends AppCompatActivity {
 
 
                         if (clickCounter[0] % 2 == 0){
-                            whoseTurn[0] = "P1";
+                            whoClicked[0] = "P1";
                             grid[n].setImageResource(R.drawable.h_blue);
                         }else if (clickCounter[0] % 2 == 1){
-                            whoseTurn[0] = "P2";
+                            whoClicked[0] = "P2";
                             grid[n].setImageResource(R.drawable.h_red);
                         }
 
@@ -69,13 +69,13 @@ public class MainActivity extends AppCompatActivity {
                             if(isFilled){
                                 switch (side) {
                                     case 1:
-                                        filled[0].setText(whoseTurn[0]);
+                                        filled[0].setText(whoClicked[0]);
                                         break;
                                     case 2:
-                                        filled[1].setText(whoseTurn[0]);
+                                        filled[1].setText(whoClicked[0]);
                                         break;
                                     case 3:
-                                        filled[2].setText(whoseTurn[0]);
+                                        filled[2].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity {
                             if(isFilled) {
                                 switch (side) {
                                     case 22:
-                                        filled[6].setText(whoseTurn[0]);
+                                        filled[6].setText(whoClicked[0]);
                                         break;
                                     case 23:
-                                        filled[7].setText(whoseTurn[0]);
+                                        filled[7].setText(whoClicked[0]);
                                         break;
                                     case 24:
-                                        filled[8].setText(whoseTurn[0]);
+                                        filled[8].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -100,22 +100,22 @@ public class MainActivity extends AppCompatActivity {
                             if(isFilled){
                                 switch (side) {
                                     case 8:
-                                        filled[3].setText(whoseTurn[0]);
+                                        filled[3].setText(whoClicked[0]);
                                         break;
                                     case 9:
-                                        filled[4].setText(whoseTurn[0]);
+                                        filled[4].setText(whoClicked[0]);
                                         break;
                                     case 10:
-                                        filled[5].setText(whoseTurn[0]);
+                                        filled[5].setText(whoClicked[0]);
                                         break;
                                     case 15:
-                                        filled[6].setText(whoseTurn[0]);
+                                        filled[6].setText(whoClicked[0]);
                                         break;
                                     case 16:
-                                        filled[7].setText(whoseTurn[0]);
+                                        filled[7].setText(whoClicked[0]);
                                         break;
                                     case 17:
-                                        filled[8].setText(whoseTurn[0]);
+                                        filled[8].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -123,22 +123,22 @@ public class MainActivity extends AppCompatActivity {
                             if (isFilled){
                                 switch (side) {
                                     case 8:
-                                        filled[0].setText(whoseTurn[0]);
+                                        filled[0].setText(whoClicked[0]);
                                         break;
                                     case 9:
-                                        filled[1].setText(whoseTurn[0]);
+                                        filled[1].setText(whoClicked[0]);
                                         break;
                                     case 10:
-                                        filled[2].setText(whoseTurn[0]);
+                                        filled[2].setText(whoClicked[0]);
                                         break;
                                     case 15:
-                                        filled[3].setText(whoseTurn[0]);
+                                        filled[3].setText(whoClicked[0]);
                                         break;
                                     case 16:
-                                        filled[4].setText(whoseTurn[0]);
+                                        filled[4].setText(whoClicked[0]);
                                         break;
                                     case 17:
-                                        filled[5].setText(whoseTurn[0]);
+                                        filled[5].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -158,10 +158,10 @@ public class MainActivity extends AppCompatActivity {
 
 
                         if (clickCounter[0] % 2 == 0){
-                            whoseTurn[0] = "P1";
+                            whoClicked[0] = "P1";
                             grid[n].setImageResource(R.drawable.v_blue);
                         }else if (clickCounter[0] % 2 == 1){
-                            whoseTurn[0] = "P2";
+                            whoClicked[0] = "P2";
                             grid[n].setImageResource(R.drawable.v_red);
                         }
 
@@ -170,13 +170,13 @@ public class MainActivity extends AppCompatActivity {
                             if(isFilled){
                                 switch (side) {
                                     case 4:
-                                        filled[0].setText(whoseTurn[0]);
+                                        filled[0].setText(whoClicked[0]);
                                         break;
                                     case 11:
-                                        filled[3].setText(whoseTurn[0]);
+                                        filled[3].setText(whoClicked[0]);
                                         break;
                                     case 18:
-                                        filled[6].setText(whoseTurn[0]);
+                                        filled[6].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -185,13 +185,13 @@ public class MainActivity extends AppCompatActivity {
                             if(isFilled) {
                                 switch (side) {
                                     case 7:
-                                        filled[2].setText(whoseTurn[0]);
+                                        filled[2].setText(whoClicked[0]);
                                         break;
                                     case 14:
-                                        filled[5].setText(whoseTurn[0]);
+                                        filled[5].setText(whoClicked[0]);
                                         break;
                                     case 21:
-                                        filled[8].setText(whoseTurn[0]);
+                                        filled[8].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -201,22 +201,22 @@ public class MainActivity extends AppCompatActivity {
                             if (isFilled) {
                                 switch (side) {
                                     case 5:
-                                        filled[1].setText(whoseTurn[0]);
+                                        filled[1].setText(whoClicked[0]);
                                         break;
                                     case 6:
-                                        filled[2].setText(whoseTurn[0]);
+                                        filled[2].setText(whoClicked[0]);
                                         break;
                                     case 12:
-                                        filled[4].setText(whoseTurn[0]);
+                                        filled[4].setText(whoClicked[0]);
                                         break;
                                     case 13:
-                                        filled[5].setText(whoseTurn[0]);
+                                        filled[5].setText(whoClicked[0]);
                                         break;
                                     case 19:
-                                        filled[7].setText(whoseTurn[0]);
+                                        filled[7].setText(whoClicked[0]);
                                         break;
                                     case 20:
-                                        filled[8].setText(whoseTurn[0]);
+                                        filled[8].setText(whoClicked[0]);
                                         break;
                                 }
                             }
@@ -224,22 +224,22 @@ public class MainActivity extends AppCompatActivity {
                             if (isFilled) {
                                 switch (side) {
                                     case 5:
-                                        filled[0].setText(whoseTurn[0]);
+                                        filled[0].setText(whoClicked[0]);
                                         break;
                                     case 6:
-                                        filled[1].setText(whoseTurn[0]);
+                                        filled[1].setText(whoClicked[0]);
                                         break;
                                     case 12:
-                                        filled[3].setText(whoseTurn[0]);
+                                        filled[3].setText(whoClicked[0]);
                                         break;
                                     case 13:
-                                        filled[4].setText(whoseTurn[0]);
+                                        filled[4].setText(whoClicked[0]);
                                         break;
                                     case 19:
-                                        filled[6].setText(whoseTurn[0]);
+                                        filled[6].setText(whoClicked[0]);
                                         break;
                                     case 20:
-                                        filled[7].setText(whoseTurn[0]);
+                                        filled[7].setText(whoClicked[0]);
                                         break;
                                 }
                             }
