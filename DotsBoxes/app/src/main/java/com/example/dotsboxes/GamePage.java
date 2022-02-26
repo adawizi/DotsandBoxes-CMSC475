@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
@@ -25,6 +26,7 @@ public class GamePage extends AppCompatActivity {
     ArrayList<Integer> rightEdges = new ArrayList<>(Arrays.asList(7, 14, 21));
     ArrayList<Integer> topEdges = new ArrayList<>(Arrays.asList(1, 2, 3));
     ArrayList<Integer> bottomEdges = new ArrayList<>(Arrays.asList(22, 23, 24));
+
     final int[] scores = {0, 0};
 
 

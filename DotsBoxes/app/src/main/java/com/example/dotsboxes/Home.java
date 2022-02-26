@@ -9,6 +9,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Home extends AppCompatActivity {
 
@@ -24,16 +25,21 @@ public class Home extends AppCompatActivity {
         EditText pTwoInit = findViewById(R.id.pTwoInit);
 
 
-
         Button button = findViewById(R.id.button);
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1", pOneInit.getText().toString()).apply();
-                myEditor.putString("P2", pTwoInit.getText().toString()).apply();
+                if(pOneInit.getText().length() < 1 || pTwoInit.getText().length() < 1){
+                    Toast.makeText(getApplicationContext(), "Player initials cannot be empty", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    myEditor.putString("P1", pOneInit.getText().toString()).apply();
+                    myEditor.putString("P2", pTwoInit.getText().toString()).apply();
 
-                Intent intent = new Intent(Home.this, GamePage.class);
-                startActivity(intent);
+
+                    Intent intent = new Intent(Home.this, GamePage.class);
+                    startActivity(intent);
+                }
             }
         });
     }
