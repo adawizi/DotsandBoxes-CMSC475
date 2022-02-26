@@ -26,7 +26,9 @@ public class GamePage extends AppCompatActivity {
     ArrayList<Integer> rightEdges = new ArrayList<>(Arrays.asList(7, 14, 21));
     ArrayList<Integer> topEdges = new ArrayList<>(Arrays.asList(1, 2, 3));
     ArrayList<Integer> bottomEdges = new ArrayList<>(Arrays.asList(22, 23, 24));
-
+    int[] links = new int[24];
+    String[] whoClicked = new String[1];
+    int[] clickCounter = {-1};
     final int[] scores = {0, 0};
 
 
@@ -35,17 +37,20 @@ public class GamePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_game);
-        int[] links = {-1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1, -1,
-                -1, -1, -1, -1, -1};
-        final int[] clickCounter = {-1};
-        final String[] whoClicked = {"P1"};
         final String player1 = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P1","");
         final String player2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P2","");
+        for(int i = 0; i < links.length; i++){
+            links[i] = -1;
+        }
+        clickCounter[0] = -1;
+        whoClicked[0] = player1;
         TextView playerOne = (TextView) findViewById(R.id.playerOne);
         TextView playerTwo = (TextView) findViewById(R.id.playerTwo);
         TextView p1Score = (TextView) findViewById(R.id.p1Score);
         TextView p2Score = (TextView) findViewById(R.id.p2Score);
         TextView turn = (TextView) findViewById(R.id.turn);
+        ImageView quit = (ImageView) findViewById(R.id.quit);
+        ImageView restart = (ImageView) findViewById(R.id.restart);
         playerOne.setText("Player " + player1 + ":");
         playerTwo.setText("Player " + player2 + ":");
         turn.setText(player1 +"\'s\nTurn");
@@ -335,7 +340,46 @@ public class GamePage extends AppCompatActivity {
                     }
                 });
             }
+            quit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(GamePage.this, Home.class);
+                    startActivity(intent);
+                }
+            });
 
+            restart.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    restartGame(player1);
+                    p1Score.setText(String.valueOf(scores[0]));
+                    p2Score.setText(String.valueOf(scores[1]));
+                    turn.setText(player1 +"\'s\nTurn");
+                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                }
+            });
+
+        }
+    }
+    private void restartGame(String player1){
+        for(int i = 0; i < links.length; i++){
+            links[i] = -1;
+        }
+        clickCounter[0] = -1;
+        whoClicked[0] = player1;
+        scores[0] = 0;
+        scores[1] = 0;
+        for(int i = 0; i < grid.length; i++){
+            grid[i].setClickable(true);
+            if(horizontal.contains(i+1)){
+                grid[i].setImageResource(R.drawable.h_grey);
+            }
+            else{
+                grid[i].setImageResource(R.drawable.v_grey);
+            }
+        }
+        for(int i = 0; i < filled.length; i++){
+            filled[i].setText(null);
         }
     }
 
