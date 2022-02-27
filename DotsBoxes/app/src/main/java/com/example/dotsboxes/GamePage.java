@@ -12,6 +12,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -19,6 +20,7 @@ import java.util.Arrays;
 public class GamePage extends AppCompatActivity {
 
     boolean isFilled = false;
+    boolean noScore = false;
     ImageView[] grid = new ImageView[24];
     TextView[] filled = new TextView[9];
     ArrayList<Integer> horizontal = new ArrayList<>(Arrays.asList(1, 2, 3, 8, 9, 10, 15, 16, 17, 22, 23, 24));
@@ -31,6 +33,7 @@ public class GamePage extends AppCompatActivity {
     int[] clickCounter = {-1};
     final int[] scores = {0, 0};
     final int[] doubleScore = {0};
+
 
 
 
@@ -238,6 +241,25 @@ public class GamePage extends AppCompatActivity {
                         }
                         doubleScore[0] = 0;
 
+                        for(int i = 0; i < links.length; i++){
+                            if(links[i] == -1){
+                                noScore = true;
+                            }
+                        }
+
+                        if(noScore == false){
+                            String winMessage = "";
+                            if(scores[0] > scores[1]){
+                                winMessage = player1 + " wins!";
+                            }else if(scores[1] > scores[0]){
+                                winMessage = player2 + " wins!";
+                            }else{
+                                winMessage = "Tie game!";
+                            }
+                            Toast.makeText(getApplicationContext(), winMessage, Toast.LENGTH_LONG).show();
+                        }
+                        noScore = false;
+
                     }
 
                 });
@@ -412,6 +434,25 @@ public class GamePage extends AppCompatActivity {
                             clickCounter[0]++;
                         }
                         doubleScore[0] = 0;
+
+                        for(int i = 0; i < links.length; i++){
+                            if(links[i] == -1){
+                                noScore = true;
+                            }
+                        }
+
+                        if(noScore == false){
+                            String winMessage = "";
+                            if(scores[0] > scores[1]){
+                                winMessage = player1 + " wins!";
+                            }else if(scores[1] > scores[0]){
+                                winMessage = player2 + " wins!";
+                            }else{
+                                winMessage = "Tie game!";
+                            }
+                            Toast.makeText(getApplicationContext(), winMessage, Toast.LENGTH_LONG).show();
+                        }
+                        noScore = false;
                     }
                 });
             }
