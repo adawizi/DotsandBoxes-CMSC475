@@ -9,7 +9,10 @@ import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -58,6 +61,11 @@ public class GamePage extends AppCompatActivity {
         playerOne.setText("Player " + player1 + ":");
         playerTwo.setText("Player " + player2 + ":");
         turn.setText(player1 +"\'s\nTurn");
+
+        LayoutInflater inflater = getLayoutInflater();
+        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+        TextView WinMessageHolder = layout.findViewById(R.id.WinMessageHolder);
+        Toast toast = new Toast(getApplicationContext());
 
         for(int i = 0; i < grid.length; i++){
             int res = getResources().getIdentifier("link"+ (i+1), "id", getPackageName());
@@ -250,17 +258,22 @@ public class GamePage extends AppCompatActivity {
                         if(noScore == false){
                             String winMessage = "";
                             if(scores[0] > scores[1]){
-                                winMessage = player1 + " wins!";
+                                winMessage = player1 + " Wins!";
                                 turn.setText(player1 + "\nWins!");
                                 turn.setTextColor(Color.parseColor("#73ADCC"));
                             }else if(scores[1] > scores[0]){
-                                winMessage = player2 + " wins!";
+                                winMessage = player2 + " Wins!";
                                 turn.setText(player2 + "\nWins!");
                                 turn.setTextColor(Color.parseColor("#D56868"));
                             }else{
                                 winMessage = "Tie game!";
                             }
-                            Toast.makeText(getApplicationContext(), winMessage, Toast.LENGTH_LONG).show();
+
+                            WinMessageHolder.setText(winMessage);
+                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
+                            toast.setDuration(Toast.LENGTH_LONG);
+                            toast.setView(layout);
+                            toast.show();
                         }
                         noScore = false;
 
@@ -448,17 +461,22 @@ public class GamePage extends AppCompatActivity {
                         if(noScore == false){
                             String winMessage = "";
                             if(scores[0] > scores[1]){
-                                winMessage = player1 + " wins!";
+                                winMessage = player1 + " Wins!";
                                 turn.setText(player1 + "\nWins!");
                                 turn.setTextColor(Color.parseColor("#73ADCC"));
                             }else if(scores[1] > scores[0]){
-                                winMessage = player2 + " wins!";
+                                winMessage = player2 + " Wins!";
                                 turn.setText(player2 + "\nWins!");
                                 turn.setTextColor(Color.parseColor("#D56868"));
                             }else{
                                 winMessage = "Tie game!";
                             }
-                            Toast.makeText(getApplicationContext(), winMessage, Toast.LENGTH_LONG).show();
+
+                            WinMessageHolder.setText(winMessage);
+                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
+                            toast.setDuration(Toast.LENGTH_LONG);
+                            toast.setView(layout);
+                            toast.show();
                         }
                         noScore = false;
                     }
