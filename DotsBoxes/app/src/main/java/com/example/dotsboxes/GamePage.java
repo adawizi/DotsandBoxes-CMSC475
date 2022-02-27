@@ -251,8 +251,12 @@ public class GamePage extends AppCompatActivity {
                             String winMessage = "";
                             if(scores[0] > scores[1]){
                                 winMessage = player1 + " wins!";
+                                turn.setText(player1 + "\nWins!");
+                                turn.setTextColor(Color.parseColor("#73ADCC"));
                             }else if(scores[1] > scores[0]){
                                 winMessage = player2 + " wins!";
+                                turn.setText(player2 + "\nWins!");
+                                turn.setTextColor(Color.parseColor("#D56868"));
                             }else{
                                 winMessage = "Tie game!";
                             }
@@ -445,8 +449,12 @@ public class GamePage extends AppCompatActivity {
                             String winMessage = "";
                             if(scores[0] > scores[1]){
                                 winMessage = player1 + " wins!";
+                                turn.setText(player1 + "\nWins!");
+                                turn.setTextColor(Color.parseColor("#73ADCC"));
                             }else if(scores[1] > scores[0]){
                                 winMessage = player2 + " wins!";
+                                turn.setText(player2 + "\nWins!");
+                                turn.setTextColor(Color.parseColor("#D56868"));
                             }else{
                                 winMessage = "Tie game!";
                             }
