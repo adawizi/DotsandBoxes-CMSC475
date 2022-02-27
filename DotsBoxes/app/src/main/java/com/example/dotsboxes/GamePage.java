@@ -30,6 +30,7 @@ public class GamePage extends AppCompatActivity {
     String[] whoClicked = new String[1];
     int[] clickCounter = {-1};
     final int[] scores = {0, 0};
+    final int[] doubleScore = {0};
 
 
 
@@ -94,10 +95,18 @@ public class GamePage extends AppCompatActivity {
                             if(isFilled){
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -117,10 +126,18 @@ public class GamePage extends AppCompatActivity {
                             if(isFilled) {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -141,10 +158,18 @@ public class GamePage extends AppCompatActivity {
                             if(isFilled){
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -172,10 +197,18 @@ public class GamePage extends AppCompatActivity {
                             if (isFilled){
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -200,7 +233,13 @@ public class GamePage extends AppCompatActivity {
                                 }
                             }
                         }
+                        if(doubleScore[0] == 2){
+                            clickCounter[0]++;
+                        }
+                        doubleScore[0] = 0;
+
                     }
+
                 });
             }
             else {
@@ -231,10 +270,18 @@ public class GamePage extends AppCompatActivity {
                             if(isFilled){
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -254,10 +301,18 @@ public class GamePage extends AppCompatActivity {
                             if(isFilled) {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -278,10 +333,18 @@ public class GamePage extends AppCompatActivity {
                             if (isFilled) {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -309,10 +372,18 @@ public class GamePage extends AppCompatActivity {
                             if (isFilled) {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
+                                    turn.setText(player1 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
                                 }
                                 else {
                                     scores[1]++;
+                                    turn.setText(player2 +"\'s\nTurn");
+                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    doubleScore[0]++;
+                                    clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
                                 }
                                 switch (side) {
@@ -337,6 +408,10 @@ public class GamePage extends AppCompatActivity {
                                 }
                             }
                         }
+                        if(doubleScore[0] == 2){
+                            clickCounter[0]++;
+                        }
+                        doubleScore[0] = 0;
                     }
                 });
             }
