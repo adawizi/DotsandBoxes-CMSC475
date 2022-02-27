@@ -40,14 +40,14 @@
         android:ems="10"
         android:hint="Initials"
         android:inputType="textCapCharacters"
-        android:maxLength="1"
+        android:maxLength="2"
         android:textAlignment="center"
         android:textColor="@color/player_blue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378" />
+        app:layout_constraintVertical_bias="0.391" />
 
     <TextView
         android:id="@+id/textView"
@@ -70,16 +70,16 @@
         android:background="@drawable/initials_box"
         android:ems="10"
         android:hint="Initials"
-        android:textAllCaps="true"
         android:inputType="textCapCharacters"
-        android:maxLength="1"
+        android:maxLength="2"
         android:textAlignment="center"
+        android:textAllCaps="true"
         android:textColor="@color/player_red"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.59" />
+        app:layout_constraintVertical_bias="0.603" />
 
     <TextView
         android:id="@+id/textView2"
