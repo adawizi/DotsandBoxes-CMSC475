@@ -42,5 +42,21 @@ public class Home extends AppCompatActivity {
                 }
             }
         });
+        Button buttonSetting = findViewById(R.id.settings);
+        buttonSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, SettingsPage.class);
+                startActivity(intent);
+            }
+        });
+        Button buttonHelp = findViewById(R.id.help);
+        buttonHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Home.this, HelpPage.class);
+                startActivity(intent);
+            }
+        });
     }
 }
