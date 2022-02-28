@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DotsBoxes">
         <activity
+            android:name=".SettingsPage"
+            android:exported="false" />
+        <activity
             android:name=".HelpPage"
             android:exported="false" />
         <activity
