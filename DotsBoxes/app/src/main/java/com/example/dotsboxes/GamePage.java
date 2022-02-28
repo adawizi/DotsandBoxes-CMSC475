@@ -3,6 +3,7 @@ package com.example.dotsboxes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.Dialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -13,6 +14,7 @@ import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -485,8 +487,7 @@ public class GamePage extends AppCompatActivity {
             quit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    Intent intent = new Intent(GamePage.this, Home.class);
-                    startActivity(intent);
+                    openDialog();
                 }
             });
 
@@ -503,6 +504,11 @@ public class GamePage extends AppCompatActivity {
 
         }
     }
+    public void openDialog(){
+        QuitDialog quitDialog = new QuitDialog();
+        quitDialog.show(getSupportFragmentManager(), "quit dialog");
+    }
+
     private void restartGame(String player1){
         for(int i = 0; i < links.length; i++){
             links[i] = -1;
