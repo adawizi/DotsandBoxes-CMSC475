@@ -12,5 +12,7 @@
     <color name="player_blue">#73ADCC</color>
     <color name="shadow">#B5B5B5</color>
     <color name="salmon">#FA8072</color>
+    <color name="light_grey">#DDDDDD</color>
+    <color name="dark_grey">#484848</color>
 
 </resources>

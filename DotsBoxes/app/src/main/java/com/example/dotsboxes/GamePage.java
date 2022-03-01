@@ -496,7 +496,7 @@ public class GamePage extends AppCompatActivity {
             restart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    AlertDialog.Builder rBuilder = new AlertDialog.Builder(GamePage.this);
+                    AlertDialog.Builder rBuilder = new AlertDialog.Builder(GamePage.this, R.style.CustomAlertDialog);
                     View rView = getLayoutInflater().inflate(R.layout.dialog_restart, null);
                     Button rYes = (Button) rView.findViewById(R.id.rYes);
                     Button rNo = (Button) rView.findViewById(R.id.rNo);
