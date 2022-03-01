@@ -3,8 +3,10 @@ package com.example.dotsboxes;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.ContextCompat;
 
+import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
@@ -494,16 +496,38 @@ public class GamePage extends AppCompatActivity {
             restart.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    restartGame(player1);
-                    p1Score.setText(String.valueOf(scores[0]));
-                    p2Score.setText(String.valueOf(scores[1]));
-                    turn.setText(player1 +"\'s\nTurn");
-                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                    AlertDialog.Builder rBuilder = new AlertDialog.Builder(GamePage.this);
+                    View rView = getLayoutInflater().inflate(R.layout.dialog_restart, null);
+                    Button rYes = (Button) rView.findViewById(R.id.rYes);
+                    Button rNo = (Button) rView.findViewById(R.id.rNo);
+                    rBuilder.setView(rView);
+                    AlertDialog rDialog = rBuilder.create();
+                    rDialog.show();
+
+                    rYes.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View view) {
+                            restartGame(player1);
+                            p1Score.setText(String.valueOf(scores[0]));
+                            p2Score.setText(String.valueOf(scores[1]));
+                            turn.setText(player1 +"\'s\nTurn");
+                            turn.setTextColor(Color.parseColor("#73ADCC"));
+                            Toast.makeText(GamePage.this, "Game restarted", Toast.LENGTH_SHORT).show();
+                            rDialog.dismiss();
+                        }
+                    });
+                    rNo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            rDialog.dismiss();
+                        }
+                    });
                 }
             });
 
         }
     }
+
     public void openDialog(){
         QuitDialog quitDialog = new QuitDialog();
         quitDialog.show(getSupportFragmentManager(), "quit dialog");
