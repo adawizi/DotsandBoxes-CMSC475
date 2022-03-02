@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingVertical="35dp"
+    android:paddingHorizontal="50dp">
+
+
+    <TextView
+        android:id="@+id/qQuestion"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:paddingBottom="10dp"
+        android:text="Are you sure\nyou want \nto quit?"
+        android:textAlignment="center"
+        android:textSize="25dp" />
+
+    <Button
+        android:id="@+id/qYes"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="YES"
+        android:background="@drawable/confirm_button"/>
+    <Button
+        android:id="@+id/qNo"
+        android:layout_width="200dp"
+        android:layout_height="40dp"
+        android:layout_weight="1"
+        android:layout_gravity="center"
+        android:layout_margin="5dp"
+        android:text="NO"
+        android:background="@drawable/confirm_button"/>
+
+</LinearLayout>

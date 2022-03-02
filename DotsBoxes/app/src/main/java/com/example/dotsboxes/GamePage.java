@@ -489,7 +489,28 @@ public class GamePage extends AppCompatActivity {
             quit.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    openDialog();
+                    AlertDialog.Builder qBuilder = new AlertDialog.Builder(GamePage.this, R.style.CustomAlertDialog);
+                    View qView = getLayoutInflater().inflate(R.layout.dialog_quit, null);
+                    Button qYes = (Button) qView.findViewById(R.id.qYes);
+                    Button qNo = (Button) qView.findViewById(R.id.qNo);
+                    qBuilder.setView(qView);
+                    AlertDialog qDialog = qBuilder.create();
+                    qDialog.show();
+
+                    qYes.setOnClickListener(new View.OnClickListener(){
+                        @Override
+                        public void onClick(View view) {
+                            Intent intent = new Intent(GamePage.this, Home.class);
+                            startActivity(intent);
+                            qDialog.dismiss();
+                        }
+                    });
+                    qNo.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            qDialog.dismiss();
+                        }
+                    });
                 }
             });
 
@@ -526,11 +547,6 @@ public class GamePage extends AppCompatActivity {
             });
 
         }
-    }
-
-    public void openDialog(){
-        QuitDialog quitDialog = new QuitDialog();
-        quitDialog.show(getSupportFragmentManager(), "quit dialog");
     }
 
     private void restartGame(String player1){
