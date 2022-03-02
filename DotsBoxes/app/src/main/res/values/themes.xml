@@ -18,4 +18,13 @@
     <style name="CustomAlertDialog" parent="Theme.AppCompat.Light.Dialog">
         <item name="android:windowBackground">@drawable/popup_window</item>
     </style>
+
+    <style name="Theme.DotsBoxes.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Theme.DotsBoxes.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="Theme.DotsBoxes.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 </resources>
