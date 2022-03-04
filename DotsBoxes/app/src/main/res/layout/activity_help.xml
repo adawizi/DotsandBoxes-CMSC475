@@ -1,18 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:layout_editor_absoluteX="1dp"
-    tools:layout_editor_absoluteY="1dp"
-    android:fillViewport="true">
+    tools:context=".HelpPage">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".HelpPage">
 
+
+        <!--
         <ImageView
             android:id="@+id/imageView"
             android:layout_width="match_parent"
@@ -191,7 +187,186 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintVertical_bias="0.929" />
-    </androidx.constraintlayout.widget.ConstraintLayout>
+            -->
 
 
-</ScrollView>
+    <TextView
+        android:id="@+id/textView10"
+        android:layout_width="101dp"
+        android:layout_height="60dp"
+        android:gravity="center"
+        android:text="Help"
+        android:textSize="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="How to Play"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.123" />
+
+    <ScrollView
+        android:layout_width="375dp"
+        android:layout_height="557dp"
+        android:background="@color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.491"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.739">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="5dp">
+
+
+            <TextView
+                android:id="@+id/htpText1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp1"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage1"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp1" />
+
+            <TextView
+                android:id="@+id/htpText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp2"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage2"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp2" />
+
+            <TextView
+                android:id="@+id/htpText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp3"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage3"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp3" />
+
+            <TextView
+                android:id="@+id/htpText4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp4"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage4"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp4" />
+
+            <TextView
+                android:id="@+id/htpText5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp5"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage5"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp5" />
+
+            <TextView
+                android:id="@+id/htpText6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp6"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage6"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp6" />
+
+            <TextView
+                android:id="@+id/htpText7"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:text="@string/htp7"
+                android:textAlignment="center"
+                android:textSize="16sp" />
+
+            <ImageView
+                android:id="@+id/htpImage7"
+                android:layout_width="wrap_content"
+                android:layout_height="128dp"
+                android:layout_margin="5dp"
+                android:background="@color/grey"
+                android:elevation="5dp"
+                android:padding="1dp"
+                app:srcCompat="@drawable/htp7" />
+        </LinearLayout>
+    </ScrollView>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
