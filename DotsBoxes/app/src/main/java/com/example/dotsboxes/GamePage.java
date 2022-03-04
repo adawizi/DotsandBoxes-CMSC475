@@ -1,14 +1,9 @@
 package com.example.dotsboxes;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.core.content.ContextCompat;
 
 import android.app.AlertDialog;
-import android.app.Dialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -67,7 +62,7 @@ public class GamePage extends AppCompatActivity {
         turn.setText(player1 +"\'s\nTurn");
 
         LayoutInflater inflater = getLayoutInflater();
-        View layout = inflater.inflate(R.layout.custom_toast, (ViewGroup) findViewById(R.id.custom_toast_layout));
+        View layout = inflater.inflate(R.layout.toast_winner, (ViewGroup) findViewById(R.id.toast_winner_layout));
         TextView WinMessageHolder = layout.findViewById(R.id.WinMessageHolder);
         Toast toast = new Toast(getApplicationContext());
 
@@ -533,8 +528,8 @@ public class GamePage extends AppCompatActivity {
                             p2Score.setText(String.valueOf(scores[1]));
                             turn.setText(player1 +"\'s\nTurn");
                             turn.setTextColor(Color.parseColor("#73ADCC"));
-                            Toast.makeText(GamePage.this, "Game restarted", Toast.LENGTH_SHORT).show();
                             rDialog.dismiss();
+                            showToast();
                         }
                     });
                     rNo.setOnClickListener(new View.OnClickListener() {
@@ -547,6 +542,18 @@ public class GamePage extends AppCompatActivity {
             });
 
         }
+    }
+
+    private void showToast(){
+        String warning = "Game Restarted";
+        Toast toast = new Toast(GamePage.this);
+        View toastLayout = getLayoutInflater().inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.custom_toast_layout));
+        TextView gameRestarted = (TextView) toastLayout.findViewById(R.id.custom_toast);
+        gameRestarted.setText(warning);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 850);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(toastLayout);
+        toast.show();
     }
 
     private void restartGame(String player1){
