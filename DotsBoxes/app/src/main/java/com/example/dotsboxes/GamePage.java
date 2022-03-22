@@ -35,6 +35,7 @@ public class GamePage extends AppCompatActivity {
     int[] clickCounter = {-1};
     final int[] scores = {0, 0};
     final int[] doubleScore = {0};
+    int[] fillColor = new int[1];
 
 
 
@@ -65,6 +66,7 @@ public class GamePage extends AppCompatActivity {
         View layout = inflater.inflate(R.layout.toast_winner, (ViewGroup) findViewById(R.id.toast_winner_layout));
         TextView WinMessageHolder = layout.findViewById(R.id.WinMessageHolder);
         Toast toast = new Toast(getApplicationContext());
+        int[] fillColor = new int[1];
 
         for(int i = 0; i < grid.length; i++){
             int res = getResources().getIdentifier("link"+ (i+1), "id", getPackageName());
@@ -91,12 +93,12 @@ public class GamePage extends AppCompatActivity {
                         if (clickCounter[0] % 2 == 0){
                             whoClicked[0] = player1;
                             turn.setText(player2 +"\'s\nTurn");
-                            turn.setTextColor(Color.parseColor("#D56868"));
+                            turn.setTextColor(getResources().getColor(R.color.player_red));
                             grid[n].setImageResource(R.drawable.h_blue);
                         }else if (clickCounter[0] % 2 == 1){
                             whoClicked[0] = player2;
                             turn.setText(player1 +"\'s\nTurn");
-                            turn.setTextColor(Color.parseColor("#73ADCC"));
+                            turn.setTextColor(getResources().getColor(R.color.player_blue));
                             grid[n].setImageResource(R.drawable.h_red);
                         }
 
@@ -106,7 +108,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -114,7 +117,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -122,12 +126,15 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 1:
                                         filled[0].setText(whoClicked[0]);
+                                        filled[0].setTextColor(fillColor[0]);
                                         break;
                                     case 2:
                                         filled[1].setText(whoClicked[0]);
+                                        filled[1].setTextColor(fillColor[0]);
                                         break;
                                     case 3:
                                         filled[2].setText(whoClicked[0]);
+                                        filled[2].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -137,7 +144,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -145,7 +153,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -153,12 +162,15 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 22:
                                         filled[6].setText(whoClicked[0]);
+                                        filled[6].setTextColor(fillColor[0]);
                                         break;
                                     case 23:
                                         filled[7].setText(whoClicked[0]);
+                                        filled[7].setTextColor(fillColor[0]);
                                         break;
                                     case 24:
                                         filled[8].setText(whoClicked[0]);
+                                        filled[8].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -169,7 +181,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -177,7 +190,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -185,21 +199,27 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 8:
                                         filled[3].setText(whoClicked[0]);
+                                        filled[3].setTextColor(fillColor[0]);
                                         break;
                                     case 9:
                                         filled[4].setText(whoClicked[0]);
+                                        filled[4].setTextColor(fillColor[0]);
                                         break;
                                     case 10:
                                         filled[5].setText(whoClicked[0]);
+                                        filled[5].setTextColor(fillColor[0]);
                                         break;
                                     case 15:
                                         filled[6].setText(whoClicked[0]);
+                                        filled[6].setTextColor(fillColor[0]);
                                         break;
                                     case 16:
                                         filled[7].setText(whoClicked[0]);
+                                        filled[7].setTextColor(fillColor[0]);
                                         break;
                                     case 17:
                                         filled[8].setText(whoClicked[0]);
+                                        filled[8].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -208,7 +228,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -216,7 +237,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -224,21 +246,27 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 8:
                                         filled[0].setText(whoClicked[0]);
+                                        filled[0].setTextColor(fillColor[0]);
                                         break;
                                     case 9:
                                         filled[1].setText(whoClicked[0]);
+                                        filled[1].setTextColor(fillColor[0]);
                                         break;
                                     case 10:
                                         filled[2].setText(whoClicked[0]);
+                                        filled[2].setTextColor(fillColor[0]);
                                         break;
                                     case 15:
                                         filled[3].setText(whoClicked[0]);
+                                        filled[3].setTextColor(fillColor[0]);
                                         break;
                                     case 16:
                                         filled[4].setText(whoClicked[0]);
+                                        filled[4].setTextColor(fillColor[0]);
                                         break;
                                     case 17:
                                         filled[5].setText(whoClicked[0]);
+                                        filled[5].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -259,11 +287,11 @@ public class GamePage extends AppCompatActivity {
                             if(scores[0] > scores[1]){
                                 winMessage = player1 + " Wins!";
                                 turn.setText(player1 + "\nWins!");
-                                turn.setTextColor(Color.parseColor("#73ADCC"));
+                                turn.setTextColor(getResources().getColor(R.color.player_blue));
                             }else if(scores[1] > scores[0]){
                                 winMessage = player2 + " Wins!";
                                 turn.setText(player2 + "\nWins!");
-                                turn.setTextColor(Color.parseColor("#D56868"));
+                                turn.setTextColor(getResources().getColor(R.color.player_red));
                             }else{
                                 winMessage = "Tie game!";
                             }
@@ -294,12 +322,12 @@ public class GamePage extends AppCompatActivity {
                         if (clickCounter[0] % 2 == 0){
                             whoClicked[0] = player1;
                             turn.setText(player2 +"\'s\nTurn");
-                            turn.setTextColor(Color.parseColor("#D56868"));
+                            turn.setTextColor(getResources().getColor(R.color.player_red));
                             grid[n].setImageResource(R.drawable.v_blue);
                         }else if (clickCounter[0] % 2 == 1){
                             whoClicked[0] = player2;
                             turn.setText(player1 +"\'s\nTurn");
-                            turn.setTextColor(Color.parseColor("#73ADCC"));
+                            turn.setTextColor(getResources().getColor(R.color.player_blue));
                             grid[n].setImageResource(R.drawable.v_red);
                         }
 
@@ -309,7 +337,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -317,7 +346,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -325,12 +355,15 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 4:
                                         filled[0].setText(whoClicked[0]);
+                                        filled[0].setTextColor(fillColor[0]);
                                         break;
                                     case 11:
                                         filled[3].setText(whoClicked[0]);
+                                        filled[3].setTextColor(fillColor[0]);
                                         break;
                                     case 18:
                                         filled[6].setText(whoClicked[0]);
+                                        filled[6].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -340,7 +373,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -348,7 +382,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -356,12 +391,15 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 7:
                                         filled[2].setText(whoClicked[0]);
+                                        filled[2].setTextColor(fillColor[0]);
                                         break;
                                     case 14:
                                         filled[5].setText(whoClicked[0]);
+                                        filled[5].setTextColor(fillColor[0]);
                                         break;
                                     case 21:
                                         filled[8].setText(whoClicked[0]);
+                                        filled[8].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -372,7 +410,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -380,7 +419,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -388,21 +428,27 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 5:
                                         filled[1].setText(whoClicked[0]);
+                                        filled[1].setTextColor(fillColor[0]);
                                         break;
                                     case 6:
                                         filled[2].setText(whoClicked[0]);
+                                        filled[2].setTextColor(fillColor[0]);
                                         break;
                                     case 12:
                                         filled[4].setText(whoClicked[0]);
+                                        filled[4].setTextColor(fillColor[0]);
                                         break;
                                     case 13:
                                         filled[5].setText(whoClicked[0]);
+                                        filled[5].setTextColor(fillColor[0]);
                                         break;
                                     case 19:
                                         filled[7].setText(whoClicked[0]);
+                                        filled[7].setTextColor(fillColor[0]);
                                         break;
                                     case 20:
                                         filled[8].setText(whoClicked[0]);
+                                        filled[8].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -411,7 +457,8 @@ public class GamePage extends AppCompatActivity {
                                 if(whoClicked[0].equalsIgnoreCase(player1)) {
                                     scores[0]++;
                                     turn.setText(player1 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#73ADCC"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                    fillColor[0] = getResources().getColor(R.color.player_blue);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p1Score.setText(String.valueOf(scores[0]));
@@ -419,7 +466,8 @@ public class GamePage extends AppCompatActivity {
                                 else {
                                     scores[1]++;
                                     turn.setText(player2 +"\'s\nTurn");
-                                    turn.setTextColor(Color.parseColor("#D56868"));
+                                    turn.setTextColor(getResources().getColor(R.color.player_red));
+                                    fillColor[0] = getResources().getColor(R.color.player_red);
                                     doubleScore[0]++;
                                     clickCounter[0]--;
                                     p2Score.setText(String.valueOf(scores[1]));
@@ -427,21 +475,27 @@ public class GamePage extends AppCompatActivity {
                                 switch (side) {
                                     case 5:
                                         filled[0].setText(whoClicked[0]);
+                                        filled[0].setTextColor(fillColor[0]);
                                         break;
                                     case 6:
                                         filled[1].setText(whoClicked[0]);
+                                        filled[1].setTextColor(fillColor[0]);
                                         break;
                                     case 12:
                                         filled[3].setText(whoClicked[0]);
+                                        filled[3].setTextColor(fillColor[0]);
                                         break;
                                     case 13:
                                         filled[4].setText(whoClicked[0]);
+                                        filled[4].setTextColor(fillColor[0]);
                                         break;
                                     case 19:
                                         filled[6].setText(whoClicked[0]);
+                                        filled[6].setTextColor(fillColor[0]);
                                         break;
                                     case 20:
                                         filled[7].setText(whoClicked[0]);
+                                        filled[7].setTextColor(fillColor[0]);
                                         break;
                                 }
                             }
@@ -459,19 +513,24 @@ public class GamePage extends AppCompatActivity {
 
                         if(noScore == false){
                             String winMessage = "";
+                            int winner;
                             if(scores[0] > scores[1]){
                                 winMessage = player1 + " Wins!";
                                 turn.setText(player1 + "\nWins!");
-                                turn.setTextColor(Color.parseColor("#73ADCC"));
+                                turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                winner = getResources().getColor(R.color.player_blue);
                             }else if(scores[1] > scores[0]){
                                 winMessage = player2 + " Wins!";
                                 turn.setText(player2 + "\nWins!");
-                                turn.setTextColor(Color.parseColor("#D56868"));
+                                turn.setTextColor(getResources().getColor(R.color.player_red));
+                                winner = getResources().getColor(R.color.player_red);
                             }else{
                                 winMessage = "Tie game!";
+                                winner = getResources().getColor(R.color.dark_grey);
                             }
 
                             WinMessageHolder.setText(winMessage);
+                            WinMessageHolder.setTextColor(winner);
                             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
                             toast.setDuration(Toast.LENGTH_LONG);
                             toast.setView(layout);
@@ -527,7 +586,7 @@ public class GamePage extends AppCompatActivity {
                             p1Score.setText(String.valueOf(scores[0]));
                             p2Score.setText(String.valueOf(scores[1]));
                             turn.setText(player1 +"\'s\nTurn");
-                            turn.setTextColor(Color.parseColor("#73ADCC"));
+                            turn.setTextColor(getResources().getColor(R.color.player_blue));
                             rDialog.dismiss();
                             showToast();
                         }
