@@ -8,6 +8,15 @@
     <string name="htp5">Win by completing more boxes than the other player.</string>
     <string name="htp6">Once all links have been clicked and all boxes have been formed, the winner will be announced.</string>
     <string name="htp7">The top bar displays each player\'s score and whose turn it is. There\'s also a quit button on the left and a restart button on the right.</string>
+    <string-array name="color_picker">
+        <item>Red</item>
+        <item>Blue</item>
+        <item>Green</item>
+        <item>Orange</item>
+        <item>Purple</item>
+        <item>Pink</item>
+        <item>Yellow</item>
+    </string-array>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
