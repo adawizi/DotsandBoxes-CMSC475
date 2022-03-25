@@ -1,13 +1,13 @@
 <resources>
     <string name="app_name">Dots&amp;Boxes</string>
     <string name="title_activity_help_page1">HelpPage1</string>
-    <string name="htp1">The game begins with the first player\'s turn. The player must choose a link and tap it.</string>
-    <string name="htp2">The link changes its color to the color assigned to the player that taps it. Players take turn.</string>
-    <string name="htp3">The goal is to tap on the last link that will form a box.</string>
-    <string name="htp4">If a player forms a box, the player\'s initials will be put inside the box and they get an extra turn.</string>
-    <string name="htp5">Win by having the most boxes formed at the end of the game.</string>
-    <string name="htp6">Once all links have been tapped and all boxes have been formed, the winner will be announced.</string>
-    <string name="htp7">The top bar shows the player scores and the current turn. It also contains the quit button on the left and the restart button on the right.</string>
+    <string name="htp1">The game begins with player 1\'s turn. When it\'s your turn you must click on a link.</string>
+    <string name="htp2">The link changes color to the color of the player who clicked it. Players take turns clicking links. You can change each player\'s color in the settings.</string>
+    <string name="htp3">The goal is to click on the last link that will form a box. It doesn\'t matter who clicks more sides of the box; only the player who completes a box will get a point.</string>
+    <string name="htp4">If a player forms a box, the player\'s initials will be put inside the box and they will get an extra turn.</string>
+    <string name="htp5">Win by completing more boxes than the other player.</string>
+    <string name="htp6">Once all links have been clicked and all boxes have been formed, the winner will be announced.</string>
+    <string name="htp7">The top bar displays each player\'s score and whose turn it is. There\'s also a quit button on the left and a restart button on the right.</string>
     <string name="large_text">
         "Material is the metaphor.\n\n"
 
