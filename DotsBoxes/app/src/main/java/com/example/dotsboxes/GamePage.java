@@ -136,6 +136,7 @@ public class GamePage extends AppCompatActivity {
         playerOne.setText("Player " + player1 + ":");
         playerTwo.setText("Player " + player2 + ":");
         turn.setText(player1 +"\'s\nTurn");
+        turn.setTextColor(getResources().getColor(blue));
 
         p1Score.setTextColor(getResources().getColor(blue));
         p2Score.setTextColor(getResources().getColor(red));
