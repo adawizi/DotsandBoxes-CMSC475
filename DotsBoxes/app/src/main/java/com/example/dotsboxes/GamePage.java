@@ -284,19 +284,24 @@ public class GamePage extends AppCompatActivity {
 
                         if(noScore == false){
                             String winMessage = "";
+                            int winner;
                             if(scores[0] > scores[1]){
                                 winMessage = player1 + " Wins!";
                                 turn.setText(player1 + "\nWins!");
                                 turn.setTextColor(getResources().getColor(R.color.player_blue));
+                                winner = getResources().getColor(R.color.player_blue);
                             }else if(scores[1] > scores[0]){
                                 winMessage = player2 + " Wins!";
                                 turn.setText(player2 + "\nWins!");
                                 turn.setTextColor(getResources().getColor(R.color.player_red));
+                                winner = getResources().getColor(R.color.player_blue);
                             }else{
                                 winMessage = "Tie game!";
+                                winner = getResources().getColor(R.color.dark_grey);
                             }
 
                             WinMessageHolder.setText(winMessage);
+                            WinMessageHolder.setTextColor(winner);
                             toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
                             toast.setDuration(Toast.LENGTH_LONG);
                             toast.setView(layout);
