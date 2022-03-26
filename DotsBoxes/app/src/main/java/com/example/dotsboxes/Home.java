@@ -28,6 +28,58 @@ public class Home extends AppCompatActivity {
         EditText pTwoInit = findViewById(R.id.pTwoInit);
 
         Button button = findViewById(R.id.button);
+        String p1C = "blue";
+        String p2C = "red";
+        int red = R.color.player_red;
+        int blue = R.color.player_blue;
+        try {
+            p1C = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P1Color","");
+            p2C = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P2Color","");
+            System.out.println(p1C);
+            System.out.println(p2C);
+        }
+        catch(Exception e) {
+            System.out.println("ERROR" + e);
+            p1C = "blue";
+            p2C = "red";
+        }
+        if(p1C.equals("green")){
+            blue = R.color.player_green;
+        }
+        if(p1C.equals("blue")){
+            blue = R.color.player_blue;
+        }
+        if(p1C.equals("red")){
+            blue = R.color.player_red;
+        }
+        if(p1C.equals("orange")){
+            blue = R.color.player_orange;
+        }
+        if(p1C.equals("purple")){
+            blue = R.color.player_purple;
+        }
+        if(p2C.equals("green")){
+            red = R.color.player_green;
+        }
+        if(p2C.equals("blue")){
+            red = R.color.player_blue;
+
+        }
+        if(p2C.equals("red")){
+            red = R.color.player_red;
+
+        }
+        if(p2C.equals("orange")){
+            red = R.color.player_orange;
+
+        }
+        if(p2C.equals("purple")){
+            red = R.color.player_purple;
+
+        }
+
+        pOneInit.setTextColor(getResources().getColor(blue));
+        pTwoInit.setTextColor(getResources().getColor(red));
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

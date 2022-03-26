@@ -6,11 +6,14 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
-import android.widget.Spinner;
+import android.widget.ImageView;
+import android.widget.Toast;
 
-public class SettingsPage extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class SettingsPage extends AppCompatActivity {
+
+
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,28 +23,102 @@ public class SettingsPage extends AppCompatActivity implements AdapterView.OnIte
         SharedPreferences myPrefs = PreferenceManager.getDefaultSharedPreferences(getBaseContext());
         SharedPreferences.Editor myEditor = myPrefs.edit();
 
-        Spinner spinnerOne = (Spinner) findViewById(R.id.spinnerOne);
-        Spinner spinnerTwo = (Spinner) findViewById(R.id.spinnerTwo);
+        ImageView blue1 = findViewById(R.id.blue1);
+        ImageView red1 = findViewById(R.id.red1);
+        ImageView green1 = findViewById(R.id.green1);
+        ImageView orange1 = findViewById(R.id.orange1);
+        ImageView purple1 = findViewById(R.id.purple1);
 
-        ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this, R.array.color_picker, android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinnerOne.setAdapter(adapter);
-        spinnerTwo.setAdapter(adapter);
 
-        spinnerOne.setOnItemSelectedListener(this);
-        spinnerTwo.setOnItemSelectedListener(this);
+
+        ImageView blue2 = findViewById(R.id.blue2);
+        ImageView red2 = findViewById(R.id.red2);
+        ImageView green2 = findViewById(R.id.green2);
+        ImageView orange2 = findViewById(R.id.orange2);
+        ImageView purple2 = findViewById(R.id.purple2);
+
+        blue1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P1Color", "blue").apply();
+                Toast.makeText(getApplicationContext(), "Player 1 is now blue!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        red1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P1Color", "red").apply();
+                Toast.makeText(getApplicationContext(), "Player 1 is now red!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        green1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P1Color", "green").apply();
+                Toast.makeText(getApplicationContext(), "Player 1 is now green!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        orange1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P1Color", "orange").apply();
+                Toast.makeText(getApplicationContext(), "Player 1 is now orange!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        purple1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P1Color", "purple").apply();
+                Toast.makeText(getApplicationContext(), "Player 1 is now purple!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        blue2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P2Color", "blue").apply();
+                Toast.makeText(getApplicationContext(), "Player 2 is now blue!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        red2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P2Color", "red").apply();
+                Toast.makeText(getApplicationContext(), "Player 2 is now red!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        green2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P2Color", "green").apply();
+                Toast.makeText(getApplicationContext(), "Player 2 is now green!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        orange2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P2Color", "orange").apply();
+                Toast.makeText(getApplicationContext(), "Player 2 is now orange!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        purple2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P2Color", "purple").apply();
+                Toast.makeText(getApplicationContext(), "Player 2 is now purple!", Toast.LENGTH_SHORT).show();
+            }
+        });
 
 
     }
 
-    @Override
-    public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
-        adapterView.getItemAtPosition(i);
 
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> adapterView) {
-
-    }
 }
