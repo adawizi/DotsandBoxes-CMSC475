@@ -28,14 +28,15 @@ public class SettingsPage extends AppCompatActivity {
         ImageView green1 = findViewById(R.id.green1);
         ImageView orange1 = findViewById(R.id.orange1);
         ImageView purple1 = findViewById(R.id.purple1);
-
-
+        ImageView pink1 = findViewById(R.id.pink1);
 
         ImageView blue2 = findViewById(R.id.blue2);
         ImageView red2 = findViewById(R.id.red2);
         ImageView green2 = findViewById(R.id.green2);
         ImageView orange2 = findViewById(R.id.orange2);
         ImageView purple2 = findViewById(R.id.purple2);
+        ImageView pink2 = findViewById(R.id.pink2);
+
 
         blue1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -77,6 +78,14 @@ public class SettingsPage extends AppCompatActivity {
             }
         });
 
+        pink1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P1Color", "pink").apply();
+                Toast.makeText(getApplicationContext(), "Player 1 is now pink!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
         blue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,6 +123,14 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "purple").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now purple!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        pink2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                myEditor.putString("P2Color", "pink").apply();
+                Toast.makeText(getApplicationContext(), "Player 2 is now pink!", Toast.LENGTH_SHORT).show();
             }
         });
 

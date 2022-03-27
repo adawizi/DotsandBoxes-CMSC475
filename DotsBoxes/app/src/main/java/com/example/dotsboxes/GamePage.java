@@ -96,6 +96,11 @@ public class GamePage extends AppCompatActivity {
             v_blue = R.drawable.v_purple;
             h_blue = R.drawable.h_purple;
         }
+        if(p1C.equals("pink")){
+            blue = R.color.player_pink;
+            v_blue = R.drawable.v_pink;
+            h_blue = R.drawable.h_pink;
+        }
         if(p2C.equals("green")){
             red = R.color.player_green;
             v_red = R.drawable.v_green;
@@ -120,6 +125,11 @@ public class GamePage extends AppCompatActivity {
             red = R.color.player_purple;
             v_red = R.drawable.v_purple;
             h_red = R.drawable.h_purple;
+        }
+        if(p2C.equals("pink")){
+            red = R.color.player_pink;
+            v_red = R.drawable.v_pink;
+            h_red = R.drawable.h_pink;
         }
         System.out.println(p1C);
         System.out.println(p2C);

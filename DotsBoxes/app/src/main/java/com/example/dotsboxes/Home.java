@@ -58,12 +58,14 @@ public class Home extends AppCompatActivity {
         if(p1C.equals("purple")){
             blue = R.color.player_purple;
         }
+        if(p1C.equals("pink")){
+            blue = R.color.player_pink;
+        }
         if(p2C.equals("green")){
             red = R.color.player_green;
         }
         if(p2C.equals("blue")){
             red = R.color.player_blue;
-
         }
         if(p2C.equals("red")){
             red = R.color.player_red;
@@ -74,6 +76,10 @@ public class Home extends AppCompatActivity {
 
         }
         if(p2C.equals("purple")){
+            red = R.color.player_purple;
+
+        }
+        if(p2C.equals("pink")){
             red = R.color.player_purple;
 
         }

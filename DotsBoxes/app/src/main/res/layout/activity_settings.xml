@@ -29,7 +29,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.179" />
+        app:layout_constraintVertical_bias="0.151" />
 
     <TextView
         android:id="@+id/textView15"
@@ -41,116 +41,158 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.631" />
+        app:layout_constraintVertical_bias="0.474" />
 
     <ImageView
         android:id="@+id/green2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.823"
+        app:layout_constraintVertical_bias="0.572"
         app:srcCompat="@drawable/h_green" />
 
     <ImageView
         android:id="@+id/orange2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.878"
+        app:layout_constraintVertical_bias="0.686"
         app:srcCompat="@drawable/h_orange" />
 
     <ImageView
         android:id="@+id/blue2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.699"
+        app:layout_constraintVertical_bias="0.572"
         app:srcCompat="@drawable/h_blue" />
 
     <ImageView
         android:id="@+id/red2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.76"
+        app:layout_constraintVertical_bias="0.572"
         app:srcCompat="@drawable/h_red" />
 
     <ImageView
         android:id="@+id/blue1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.252"
+        app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/h_blue" />
 
     <ImageView
         android:id="@+id/purple1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.502"
+        app:layout_constraintVertical_bias="0.353"
         app:srcCompat="@drawable/h_purple" />
 
     <ImageView
         android:id="@+id/orange1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.442"
+        app:layout_constraintVertical_bias="0.353"
         app:srcCompat="@drawable/h_orange" />
 
     <ImageView
         android:id="@+id/green1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.378"
+        app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/h_green" />
 
     <ImageView
         android:id="@+id/red1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.313"
+        app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/h_red" />
 
     <ImageView
+        android:id="@+id/pink1"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353"
+        app:srcCompat="@drawable/h_pink" />
+
+    <ImageView
         android:id="@+id/purple2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.937"
+        app:layout_constraintVertical_bias="0.686"
         app:srcCompat="@drawable/h_purple" />
+
+    <ImageView
+        android:id="@+id/pink2"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/h_pink" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
