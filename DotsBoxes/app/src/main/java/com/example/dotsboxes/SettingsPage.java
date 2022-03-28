@@ -16,7 +16,6 @@ public class SettingsPage extends AppCompatActivity {
 
 
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,12 +38,56 @@ public class SettingsPage extends AppCompatActivity {
         ImageView purple2 = findViewById(R.id.purple2);
         ImageView pink2 = findViewById(R.id.pink2);
 
+        ImageView choice1 = findViewById(R.id.choice1);
+        ImageView choice2 = findViewById(R.id.choice2);
+
+        String p1C = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P1Color","");
+        String p2C = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P2Color","");
+        if(p1C.equals("green")){
+            choice1.setImageResource(R.drawable.h_green);
+        }
+        if(p1C.equals("blue")){
+            choice1.setImageResource(R.drawable.h_blue);
+        }
+        if(p1C.equals("red")){
+            choice1.setImageResource(R.drawable.h_red);
+        }
+        if(p1C.equals("orange")){
+            choice1.setImageResource(R.drawable.h_orange);
+        }
+        if(p1C.equals("purple")){
+            choice1.setImageResource(R.drawable.h_purple);
+        }
+        if(p1C.equals("pink")){
+            choice1.setImageResource(R.drawable.h_pink);
+        }
+        if(p2C.equals("green")){
+            choice2.setImageResource(R.drawable.h_green);
+        }
+        if(p2C.equals("blue")){
+            choice2.setImageResource(R.drawable.h_blue);
+        }
+        if(p2C.equals("red")){
+            choice2.setImageResource(R.drawable.h_red);
+        }
+        if(p2C.equals("orange")){
+            choice2.setImageResource(R.drawable.h_orange);
+        }
+        if(p2C.equals("purple")){
+            choice2.setImageResource(R.drawable.h_purple);
+        }
+        if(p2C.equals("pink")){
+            choice2.setImageResource(R.drawable.h_pink);
+        }
+
+
 
         blue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 myEditor.putString("P1Color", "blue").apply();
                 Toast.makeText(getApplicationContext(), "Player 1 is now blue!", Toast.LENGTH_SHORT).show();
+                choice1.setImageResource(R.drawable.h_blue);
             }
         });
 
@@ -53,6 +96,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P1Color", "red").apply();
                 Toast.makeText(getApplicationContext(), "Player 1 is now red!", Toast.LENGTH_SHORT).show();
+                choice1.setImageResource(R.drawable.h_red);
             }
         });
 
@@ -61,6 +105,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P1Color", "green").apply();
                 Toast.makeText(getApplicationContext(), "Player 1 is now green!", Toast.LENGTH_SHORT).show();
+                choice1.setImageResource(R.drawable.h_green);
             }
         });
 
@@ -69,6 +114,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P1Color", "orange").apply();
                 Toast.makeText(getApplicationContext(), "Player 1 is now orange!", Toast.LENGTH_SHORT).show();
+                choice1.setImageResource(R.drawable.h_orange);
             }
         });
 
@@ -77,6 +123,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P1Color", "purple").apply();
                 Toast.makeText(getApplicationContext(), "Player 1 is now purple!", Toast.LENGTH_SHORT).show();
+                choice1.setImageResource(R.drawable.h_purple);
             }
         });
 
@@ -85,6 +132,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P1Color", "pink").apply();
                 Toast.makeText(getApplicationContext(), "Player 1 is now pink!", Toast.LENGTH_SHORT).show();
+                choice1.setImageResource(R.drawable.h_pink);
             }
         });
 
@@ -93,6 +141,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "blue").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now blue!", Toast.LENGTH_SHORT).show();
+                choice2.setImageResource(R.drawable.h_blue);
             }
         });
 
@@ -101,6 +150,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "red").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now red!", Toast.LENGTH_SHORT).show();
+                choice2.setImageResource(R.drawable.h_red);
             }
         });
 
@@ -109,6 +159,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "green").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now green!", Toast.LENGTH_SHORT).show();
+                choice2.setImageResource(R.drawable.h_green);
             }
         });
 
@@ -117,6 +168,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "orange").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now orange!", Toast.LENGTH_SHORT).show();
+                choice2.setImageResource(R.drawable.h_orange);
             }
         });
 
@@ -125,6 +177,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "purple").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now purple!", Toast.LENGTH_SHORT).show();
+                choice2.setImageResource(R.drawable.h_purple);
             }
         });
 
@@ -133,6 +186,7 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "pink").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now pink!", Toast.LENGTH_SHORT).show();
+                choice2.setImageResource(R.drawable.h_pink);
             }
         });
 
