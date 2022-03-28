@@ -194,5 +194,17 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686"
         app:srcCompat="@drawable/h_pink" />
+    <Button
+        android:id="@+id/save"
+        android:layout_width="146dp"
+        android:layout_height="59dp"
+        android:text="Save"
+        android:textColor="@color/cardview_dark_background"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.839" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

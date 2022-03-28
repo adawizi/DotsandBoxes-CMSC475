@@ -2,10 +2,12 @@ package com.example.dotsboxes;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -131,6 +133,15 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 myEditor.putString("P2Color", "pink").apply();
                 Toast.makeText(getApplicationContext(), "Player 2 is now pink!", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        Button save = findViewById(R.id.save);
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(SettingsPage.this, Home.class);
+                startActivity(intent);
             }
         });
 
