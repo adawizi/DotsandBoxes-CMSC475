@@ -85,108 +85,156 @@ public class SettingsPage extends AppCompatActivity {
         blue1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1Color", "blue").apply();
-                Toast.makeText(getApplicationContext(), "Player 1 is now blue!", Toast.LENGTH_SHORT).show();
-                choice1.setImageResource(R.drawable.h_blue);
+                if(!(getColor2().equals("blue"))){
+                    myEditor.putString("P1Color", "blue").apply();
+                    Toast.makeText(getApplicationContext(), "Player 1 is now blue!", Toast.LENGTH_SHORT).show();
+                    choice1.setImageResource(R.drawable.h_blue);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         red1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1Color", "red").apply();
-                Toast.makeText(getApplicationContext(), "Player 1 is now red!", Toast.LENGTH_SHORT).show();
-                choice1.setImageResource(R.drawable.h_red);
+                if(!(getColor2().equals("red"))){
+                    myEditor.putString("P1Color", "red").apply();
+                    Toast.makeText(getApplicationContext(), "Player 1 is now red!", Toast.LENGTH_SHORT).show();
+                    choice1.setImageResource(R.drawable.h_red);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         green1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1Color", "green").apply();
-                Toast.makeText(getApplicationContext(), "Player 1 is now green!", Toast.LENGTH_SHORT).show();
-                choice1.setImageResource(R.drawable.h_green);
+                if(!(getColor2().equals("green"))){
+                    myEditor.putString("P1Color", "green").apply();
+                    Toast.makeText(getApplicationContext(), "Player 1 is now green!", Toast.LENGTH_SHORT).show();
+                    choice1.setImageResource(R.drawable.h_green);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         orange1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1Color", "orange").apply();
-                Toast.makeText(getApplicationContext(), "Player 1 is now orange!", Toast.LENGTH_SHORT).show();
-                choice1.setImageResource(R.drawable.h_orange);
+                if(!(getColor2().equals("orange"))){
+                    myEditor.putString("P1Color", "orange").apply();
+                    Toast.makeText(getApplicationContext(), "Player 1 is now orange!", Toast.LENGTH_SHORT).show();
+                    choice1.setImageResource(R.drawable.h_orange);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         purple1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1Color", "purple").apply();
-                Toast.makeText(getApplicationContext(), "Player 1 is now purple!", Toast.LENGTH_SHORT).show();
-                choice1.setImageResource(R.drawable.h_purple);
+                if(!(getColor2().equals("purple"))){
+                    myEditor.putString("P1Color", "purple").apply();
+                    Toast.makeText(getApplicationContext(), "Player 1 is now purple!", Toast.LENGTH_SHORT).show();
+                    choice1.setImageResource(R.drawable.h_purple);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         pink1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P1Color", "pink").apply();
-                Toast.makeText(getApplicationContext(), "Player 1 is now pink!", Toast.LENGTH_SHORT).show();
-                choice1.setImageResource(R.drawable.h_pink);
+                if(!(getColor2().equals("pink"))){
+                    myEditor.putString("P1Color", "pink").apply();
+                    Toast.makeText(getApplicationContext(), "Player 1 is now pink!", Toast.LENGTH_SHORT).show();
+                    choice1.setImageResource(R.drawable.h_pink);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         blue2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P2Color", "blue").apply();
-                Toast.makeText(getApplicationContext(), "Player 2 is now blue!", Toast.LENGTH_SHORT).show();
-                choice2.setImageResource(R.drawable.h_blue);
+                if(!(getColor1().equals("blue"))){
+                    myEditor.putString("P2Color", "blue").apply();
+                    Toast.makeText(getApplicationContext(), "Player 2 is now blue!", Toast.LENGTH_SHORT).show();
+                    choice2.setImageResource(R.drawable.h_blue);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         red2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P2Color", "red").apply();
-                Toast.makeText(getApplicationContext(), "Player 2 is now red!", Toast.LENGTH_SHORT).show();
-                choice2.setImageResource(R.drawable.h_red);
+                if(!(getColor1().equals("red"))){
+                    myEditor.putString("P2Color", "red").apply();
+                    Toast.makeText(getApplicationContext(), "Player 2 is now red!", Toast.LENGTH_SHORT).show();
+                    choice2.setImageResource(R.drawable.h_red);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         green2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P2Color", "green").apply();
-                Toast.makeText(getApplicationContext(), "Player 2 is now green!", Toast.LENGTH_SHORT).show();
-                choice2.setImageResource(R.drawable.h_green);
+                if(!(getColor1().equals("green"))){
+                    myEditor.putString("P2Color", "green").apply();
+                    Toast.makeText(getApplicationContext(), "Player 2 is now green!", Toast.LENGTH_SHORT).show();
+                    choice2.setImageResource(R.drawable.h_green);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         orange2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P2Color", "orange").apply();
-                Toast.makeText(getApplicationContext(), "Player 2 is now orange!", Toast.LENGTH_SHORT).show();
-                choice2.setImageResource(R.drawable.h_orange);
+                if(!(getColor1().equals("orange"))){
+                    myEditor.putString("P2Color", "orange").apply();
+                    Toast.makeText(getApplicationContext(), "Player 2 is now orange!", Toast.LENGTH_SHORT).show();
+                    choice2.setImageResource(R.drawable.h_orange);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         purple2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P2Color", "purple").apply();
-                Toast.makeText(getApplicationContext(), "Player 2 is now purple!", Toast.LENGTH_SHORT).show();
-                choice2.setImageResource(R.drawable.h_purple);
+                if(!(getColor1().equals("purple"))){
+                    myEditor.putString("P2Color", "purple").apply();
+                    Toast.makeText(getApplicationContext(), "Player 2 is now purple!", Toast.LENGTH_SHORT).show();
+                    choice2.setImageResource(R.drawable.h_purple);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
         pink2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                myEditor.putString("P2Color", "pink").apply();
-                Toast.makeText(getApplicationContext(), "Player 2 is now pink!", Toast.LENGTH_SHORT).show();
-                choice2.setImageResource(R.drawable.h_pink);
+                if(!(getColor1().equals("pink"))){
+                    myEditor.putString("P2Color", "pink").apply();
+                    Toast.makeText(getApplicationContext(), "Player 2 is now pink!", Toast.LENGTH_SHORT).show();
+                    choice2.setImageResource(R.drawable.h_pink);
+                }else{
+                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
@@ -200,6 +248,12 @@ public class SettingsPage extends AppCompatActivity {
         });
 
 
+    }
+    private String getColor1(){
+        return PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P1Color","");
+    }
+    private String getColor2(){
+        return PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P2Color","");
     }
 
 
