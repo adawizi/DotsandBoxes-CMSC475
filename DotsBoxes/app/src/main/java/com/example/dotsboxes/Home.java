@@ -80,7 +80,7 @@ public class Home extends AppCompatActivity {
 
         }
         if(p2C.equals("pink")){
-            red = R.color.player_purple;
+            red = R.color.player_pink;
 
         }
 
