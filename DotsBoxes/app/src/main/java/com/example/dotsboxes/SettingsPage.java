@@ -20,7 +20,6 @@ public class SettingsPage extends AppCompatActivity {
     ImageView blue1_unavailable, red1_unavailable, green1_unavailable, orange1_unavailable, purple1_unavailable, pink1_unavailable;
     ImageView blue2_unavailable, red2_unavailable, green2_unavailable, orange2_unavailable, purple2_unavailable, pink2_unavailable;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,7 +45,7 @@ public class SettingsPage extends AppCompatActivity {
         ImageView choice1 = findViewById(R.id.choice1);
         ImageView choice2 = findViewById(R.id.choice2);
 
-        setPickImages();
+        initializeImageViews(); // imageviews for unavailable colors
 
         String p1C = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P1Color","");
         String p2C = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P2Color","");
@@ -56,7 +55,7 @@ public class SettingsPage extends AppCompatActivity {
 
         if(p1C.equals("green")){
             choice1.setImageResource(R.drawable.h_green);
-            green1_unavailable.setVisibility(View.VISIBLE);
+            green2_unavailable.setVisibility(View.VISIBLE);
         }
         if(p1C.equals("blue")){
             choice1.setImageResource(R.drawable.h_blue);
@@ -110,13 +109,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor2().equals("blue"))){
                     myEditor.putString("P1Color", "blue").apply();
-                    Toast.makeText(getApplicationContext(), "Player 1 is now blue!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", "blue");
                     choice1.setImageResource(R.drawable.h_blue);
                     unselectPreviousColor1(previouslySelected1[0]);
                     blue2_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected1[0] = "blue";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", null);
                 }
             }
         });
@@ -126,13 +125,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor2().equals("red"))){
                     myEditor.putString("P1Color", "red").apply();
-                    Toast.makeText(getApplicationContext(), "Player 1 is now red!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", "red");
                     choice1.setImageResource(R.drawable.h_red);
                     unselectPreviousColor1(previouslySelected1[0]);
                     red2_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected1[0] = "red";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", null);
                 }
             }
         });
@@ -142,13 +141,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor2().equals("green"))){
                     myEditor.putString("P1Color", "green").apply();
-                    Toast.makeText(getApplicationContext(), "Player 1 is now green!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", "green");
                     choice1.setImageResource(R.drawable.h_green);
                     unselectPreviousColor1(previouslySelected1[0]);
                     green2_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected1[0] = "green";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", null);
                 }
             }
         });
@@ -158,13 +157,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor2().equals("orange"))){
                     myEditor.putString("P1Color", "orange").apply();
-                    Toast.makeText(getApplicationContext(), "Player 1 is now orange!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", "orange");
                     choice1.setImageResource(R.drawable.h_orange);
                     unselectPreviousColor1(previouslySelected1[0]);
                     orange2_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected1[0] = "orange";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", null);
                 }
             }
         });
@@ -174,13 +173,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor2().equals("purple"))){
                     myEditor.putString("P1Color", "purple").apply();
-                    Toast.makeText(getApplicationContext(), "Player 1 is now purple!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", "purple");
                     choice1.setImageResource(R.drawable.h_purple);
                     unselectPreviousColor1(previouslySelected1[0]);
                     purple2_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected1[0] = "purple";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", null);
                 }
             }
         });
@@ -190,13 +189,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor2().equals("pink"))){
                     myEditor.putString("P1Color", "pink").apply();
-                    Toast.makeText(getApplicationContext(), "Player 1 is now pink!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", "pink1");
                     choice1.setImageResource(R.drawable.h_pink);
                     unselectPreviousColor1(previouslySelected1[0]);
                     pink2_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected1[0] = "pink";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 2", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", null);
                 }
             }
         });
@@ -206,13 +205,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor1().equals("blue"))){
                     myEditor.putString("P2Color", "blue").apply();
-                    Toast.makeText(getApplicationContext(), "Player 2 is now blue!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", "blue");
                     choice2.setImageResource(R.drawable.h_blue);
                     unselectPreviousColor2(previouslySelected2[0]);
                     blue1_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected2[0] = "blue";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", null);
                 }
             }
         });
@@ -222,13 +221,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor1().equals("red"))){
                     myEditor.putString("P2Color", "red").apply();
-                    Toast.makeText(getApplicationContext(), "Player 2 is now red!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", "red");
                     choice2.setImageResource(R.drawable.h_red);
                     unselectPreviousColor2(previouslySelected2[0]);
                     red1_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected2[0] = "red";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", null);
                 }
             }
         });
@@ -238,13 +237,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor1().equals("green"))){
                     myEditor.putString("P2Color", "green").apply();
-                    Toast.makeText(getApplicationContext(), "Player 2 is now green!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", "green");
                     choice2.setImageResource(R.drawable.h_green);
                     unselectPreviousColor2(previouslySelected2[0]);
                     green1_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected2[0] = "green";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", null);
                 }
             }
         });
@@ -254,13 +253,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor1().equals("orange"))){
                     myEditor.putString("P2Color", "orange").apply();
-                    Toast.makeText(getApplicationContext(), "Player 2 is now orange!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", "orange");
                     choice2.setImageResource(R.drawable.h_orange);
                     unselectPreviousColor2(previouslySelected2[0]);
                     orange1_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected2[0] = "orange";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", null);
                 }
             }
         });
@@ -270,13 +269,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor1().equals("purple"))){
                     myEditor.putString("P2Color", "purple").apply();
-                    Toast.makeText(getApplicationContext(), "Player 2 is now purple!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", "purple");
                     choice2.setImageResource(R.drawable.h_purple);
                     unselectPreviousColor2(previouslySelected2[0]);
                     purple1_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected2[0] = "purple";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", null);
                 }
             }
         });
@@ -286,13 +285,13 @@ public class SettingsPage extends AppCompatActivity {
             public void onClick(View view) {
                 if(!(getColor1().equals("pink"))){
                     myEditor.putString("P2Color", "pink").apply();
-                    Toast.makeText(getApplicationContext(), "Player 2 is now pink!", Toast.LENGTH_SHORT).show();
+                    showToast("Player 2", "pink");
                     choice2.setImageResource(R.drawable.h_pink);
                     unselectPreviousColor2(previouslySelected2[0]);
                     pink1_unavailable.setVisibility(View.VISIBLE);
                     previouslySelected2[0] = "pink";
                 }else{
-                    Toast.makeText(getApplicationContext(), "Can't have same color as Player 1", Toast.LENGTH_SHORT).show();
+                    showToast("Player 1", null);
                 }
             }
         });
@@ -365,7 +364,7 @@ public class SettingsPage extends AppCompatActivity {
                 break;
         }
     }
-    public void setPickImages(){
+    public void initializeImageViews(){
         blue1_unavailable = findViewById(R.id.blue1_unavailable);
         red1_unavailable = findViewById(R.id.red1_unavailable);
         green1_unavailable = findViewById(R.id.green1_unavailable);
@@ -380,5 +379,22 @@ public class SettingsPage extends AppCompatActivity {
         purple2_unavailable = findViewById(R.id.purple2_unavailable);
         pink2_unavailable = findViewById(R.id.pink2_unavailable);
     }
+
+    private void showToast(String player, String color){
+        Toast toast = new Toast(SettingsPage.this);
+        View toastLayout = getLayoutInflater().inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.custom_toast_layout));
+        TextView message = (TextView) toastLayout.findViewById(R.id.custom_toast);
+        if (color == null){
+            message.setText("Can't have the same color as " + player);
+        }
+        else {
+            message.setText(player + " is now " + color + "!");
+        }
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 850);
+        toast.setDuration(Toast.LENGTH_SHORT);
+        toast.setView(toastLayout);
+        toast.show();
+    }
+
 
 }
