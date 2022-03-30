@@ -58,6 +58,22 @@
         app:layout_constraintVertical_bias="0.572"
         app:srcCompat="@drawable/h_green" />
 
+
+    <ImageView
+        android:id="@+id/green2_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572"
+        app:srcCompat="@drawable/unavailable" />
+
     <ImageView
         android:id="@+id/orange2"
         android:layout_width="55dp"
@@ -70,6 +86,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686"
         app:srcCompat="@drawable/h_orange" />
+
+    <ImageView
+        android:id="@+id/orange2_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/unavailable" />
 
     <ImageView
         android:id="@+id/blue2"
@@ -85,6 +116,22 @@
         app:srcCompat="@drawable/h_blue" />
 
     <ImageView
+        android:id="@+id/blue2_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572"
+        app:srcCompat="@drawable/unavailable"
+        android:visibility="invisible"
+        android:clickable="false"/>
+
+
+    <ImageView
         android:id="@+id/red2"
         android:layout_width="55dp"
         android:layout_height="55dp"
@@ -94,7 +141,22 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.572"
-        app:srcCompat="@drawable/h_red" />
+        app:srcCompat="@drawable/h_red"/>
+
+
+    <ImageView
+        android:id="@+id/red2_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.572"
+        app:srcCompat="@drawable/unavailable" />
 
     <ImageView
         android:id="@+id/blue1"
@@ -109,6 +171,22 @@
         app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/h_blue" />
 
+
+    <ImageView
+        android:id="@+id/blue1_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239"
+        app:srcCompat="@drawable/unavailable" />
+
     <ImageView
         android:id="@+id/purple1"
         android:layout_width="55dp"
@@ -120,6 +198,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.353"
         app:srcCompat="@drawable/h_purple" />
+
+
+
+    <ImageView
+        android:id="@+id/purple1_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353"
+        app:srcCompat="@drawable/unavailable" />
 
     <ImageView
         android:id="@+id/orange1"
@@ -134,6 +228,22 @@
         app:layout_constraintVertical_bias="0.353"
         app:srcCompat="@drawable/h_orange" />
 
+
+    <ImageView
+        android:id="@+id/orange1_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.294"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353"
+        app:srcCompat="@drawable/unavailable" />
+
     <ImageView
         android:id="@+id/green1"
         android:layout_width="55dp"
@@ -147,6 +257,22 @@
         app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/h_green" />
 
+
+    <ImageView
+        android:id="@+id/green1_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239"
+        app:srcCompat="@drawable/unavailable" />
+
     <ImageView
         android:id="@+id/red1"
         android:layout_width="55dp"
@@ -158,6 +284,21 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.239"
         app:srcCompat="@drawable/h_red" />
+
+
+    <ImageView
+        android:id="@+id/red1_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.239"
+        app:srcCompat="@drawable/unavailable" />
 
     <ImageView
         android:id="@+id/pink1"
@@ -172,6 +313,22 @@
         app:layout_constraintVertical_bias="0.353"
         app:srcCompat="@drawable/h_pink" />
 
+
+    <ImageView
+        android:id="@+id/pink1_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.353"
+        app:srcCompat="@drawable/unavailable" />
+
     <ImageView
         android:id="@+id/purple2"
         android:layout_width="55dp"
@@ -183,6 +340,22 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686"
         app:srcCompat="@drawable/h_purple" />
+
+
+
+    <ImageView
+        android:id="@+id/purple2_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/unavailable" />
 
     <ImageView
         android:id="@+id/pink2"
@@ -196,6 +369,23 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.686"
         app:srcCompat="@drawable/h_pink" />
+
+
+    <ImageView
+        android:id="@+id/pink2_unavailable"
+        android:layout_width="55dp"
+        android:layout_height="55dp"
+        android:clickable="false"
+        android:scaleType="fitXY"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.707"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.686"
+        app:srcCompat="@drawable/unavailable" />
+
     <Button
         android:id="@+id/save"
         android:layout_width="146dp"
