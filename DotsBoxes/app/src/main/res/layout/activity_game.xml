@@ -408,7 +408,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.432"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView19"
@@ -420,7 +421,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.294"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <TextView
         android:id="@+id/textView1"
@@ -446,7 +448,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.699"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView30"
@@ -458,7 +461,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.699"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView29"
@@ -470,7 +474,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.699"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView28"
@@ -482,7 +487,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.699"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView27"
@@ -494,7 +500,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView26"
@@ -506,7 +513,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView25"
@@ -518,7 +526,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView24"
@@ -530,7 +539,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.565"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView23"
@@ -542,7 +552,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.432"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView4"
@@ -554,7 +565,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.432"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView22"
@@ -566,7 +578,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.432"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView21"
@@ -578,7 +591,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.294"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView20"
@@ -590,7 +604,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.294"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/imageView18"
@@ -602,7 +617,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.295"
-        app:srcCompat="@drawable/dot_grey" />
+        app:srcCompat="@drawable/dot_grey"
+        android:clickable="true"/>
 
     <ImageView
         android:id="@+id/topBar"
@@ -615,7 +631,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
-        app:srcCompat="@drawable/top_bar" />
+        app:srcCompat="@drawable/top_bar"/>
 
     <ImageView
         android:id="@+id/quit"
