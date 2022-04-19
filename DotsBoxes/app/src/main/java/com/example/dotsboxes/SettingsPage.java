@@ -390,7 +390,7 @@ public class SettingsPage extends AppCompatActivity {
         else {
             message.setText(player + " is now " + color + "!");
         }
-        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 850);
+        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 150);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(toastLayout);
         toast.show();
