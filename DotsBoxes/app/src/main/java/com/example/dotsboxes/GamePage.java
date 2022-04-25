@@ -394,7 +394,7 @@ public class GamePage extends AppCompatActivity {
 
                             WinMessageHolder.setText(winMessage);
                             WinMessageHolder.setTextColor(winner);
-                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
+                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 575);
                             toast.setDuration(Toast.LENGTH_LONG);
                             toast.setView(layout);
                             toast.show();
@@ -628,7 +628,7 @@ public class GamePage extends AppCompatActivity {
 
                             WinMessageHolder.setText(winMessage);
                             WinMessageHolder.setTextColor(winner);
-                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
+                            toast.setGravity(Gravity.CENTER_VERTICAL, 0, 575);
                             toast.setDuration(Toast.LENGTH_LONG);
                             toast.setView(layout);
                             toast.show();
@@ -685,7 +685,7 @@ public class GamePage extends AppCompatActivity {
                             turn.setText(player1 +"\'s\nTurn");
                             turn.setTextColor(getResources().getColor(blue));
                             rDialog.dismiss();
-                            showToast();
+                            //showToast();
                         }
                     });
                     rNo.setOnClickListener(new View.OnClickListener() {
@@ -698,6 +698,16 @@ public class GamePage extends AppCompatActivity {
             });
 
         }
+
+        Button buttonHelp = findViewById(R.id.help);
+        buttonHelp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(GamePage.this, HelpPage.class);
+                startActivity(intent);
+
+            }
+        });
     }
 
     private void showToast(){
@@ -706,7 +716,7 @@ public class GamePage extends AppCompatActivity {
         View toastLayout = getLayoutInflater().inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.custom_toast_layout));
         TextView gameRestarted = (TextView) toastLayout.findViewById(R.id.custom_toast);
         gameRestarted.setText(warning);
-        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 150);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 750);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(toastLayout);
         toast.show();
