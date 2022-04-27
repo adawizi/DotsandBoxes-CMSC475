@@ -26,7 +26,10 @@ public class Home extends AppCompatActivity {
 
         EditText pOneInit = findViewById(R.id.pOneInit);
         EditText pTwoInit = findViewById(R.id.pTwoInit);
-
+        final String player1 = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P1","");
+        final String player2 = PreferenceManager.getDefaultSharedPreferences(getBaseContext()).getString("P2","");
+        pOneInit.setText(player1);
+        pTwoInit.setText(player2);
         Button button = findViewById(R.id.button);
         String p1C = "blue";
         String p2C = "red";
@@ -105,16 +108,30 @@ public class Home extends AppCompatActivity {
         buttonSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, SettingsPage.class);
-                startActivity(intent);
+                if(pOneInit.getText().length() < 1 || pTwoInit.getText().length() < 1){
+                    showWarning();
+                }
+                else {
+                    myEditor.putString("P1", pOneInit.getText().toString()).apply();
+                    myEditor.putString("P2", pTwoInit.getText().toString()).apply();
+                    Intent intent = new Intent(Home.this, SettingsPage.class);
+                    startActivity(intent);
+                }
             }
         });
         Button buttonHelp = findViewById(R.id.help);
         buttonHelp.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(Home.this, HelpPage.class);
-                startActivity(intent);
+                if(pOneInit.getText().length() < 1 || pTwoInit.getText().length() < 1){
+                    showWarning();
+                }
+                else {
+                    myEditor.putString("P1", pOneInit.getText().toString()).apply();
+                    myEditor.putString("P2", pTwoInit.getText().toString()).apply();
+                    Intent intent = new Intent(Home.this, HelpPage.class);
+                    startActivity(intent);
+                }
             }
         });
     }
@@ -125,7 +142,7 @@ public class Home extends AppCompatActivity {
         View toastLayout = getLayoutInflater().inflate(R.layout.toast_custom, (ViewGroup) findViewById(R.id.custom_toast_layout));
         TextView initialsEmptyToast = (TextView) toastLayout.findViewById(R.id.custom_toast);
         initialsEmptyToast.setText(warning);
-        toast.setGravity(Gravity.BOTTOM|Gravity.CENTER_HORIZONTAL, 0, 150);
+        toast.setGravity(Gravity.CENTER_VERTICAL, 0, 850);
         toast.setDuration(Toast.LENGTH_SHORT);
         toast.setView(toastLayout);
         toast.show();
